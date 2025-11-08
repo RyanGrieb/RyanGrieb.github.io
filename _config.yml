@@ -1,0 +1,36 @@
+# _config.yml
+
+title: "Ryan Grieb - IT & Development Portfolio"
+description: "Computer Science graduate | IT Technician | Python Automation | Full-Stack Development"
+url: "https://ryanmg.com"
+theme: jekyll-theme-cayman
+
+author:
+  name: Ryan Grieb
+  email: ryan.m.grieb@gmail.com
+
+github_username: RyanGrieb
+
+# Enable plugins GitHub Pages supports
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude these files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Optional: Set default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
