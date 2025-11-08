@@ -1,9 +1,9 @@
 # _config.yml
 
-title: "Ryan Grieb - IT & Development Portfolio"
+title: "Ryan Grieb - IT & Development"
 description: "Computer Science graduate | IT Technician | Python Automation | Full-Stack Development"
-url: "https://ryanmg.com"
 theme: jekyll-theme-cayman
+show_downloads: true
 
 author:
   name: Ryan Grieb
