@@ -1,178 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Technical Documentation by Ryan Grieb - IT procedures, troubleshooting guides, and system documentation">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Technical Documentation by Ryan Grieb - IT procedures, troubleshooting guides, and system documentation"
+    />
     <title>Documentation | Ryan Grieb</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">Ryan Grieb</div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#experience">Experience</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
-                <li><a href="documentation.html" class="active">Documentation</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </div>
+      <div class="nav-container">
+        <div class="nav-brand">Ryan Grieb</div>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="documentation.html" class="active">Documentation</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
     <section class="page-header">
-        <div class="container">
-            <h1>Technical Documentation</h1>
-            <p>A collection of IT procedures, troubleshooting guides, and system documentation I've created to streamline operations and knowledge sharing.</p>
-        </div>
+      <div class="container">
+        <h1>Technical Documentation</h1>
+        <p>
+          A collection of IT procedures, troubleshooting guides, and system
+          documentation I've created to streamline operations and knowledge
+          sharing.
+        </p>
+      </div>
     </section>
 
     <section class="section">
-        <div class="container">
-            <div class="doc-intro">
-                <p>Documentation is a critical component of effective IT support. Below you'll find examples of technical guides, standard operating procedures, and troubleshooting documentation I've created throughout my career. These documents demonstrate my ability to translate complex technical concepts into clear, actionable instructions.</p>
-            </div>
-
-            <div class="docs-grid">
-                <!-- Documentation Card Template -->
-                <div class="doc-card">
-                    <div class="doc-icon">📡</div>
-                    <h3>Network Troubleshooting Guide</h3>
-                    <p class="doc-category">Network Infrastructure</p>
-                    <p class="doc-description">Comprehensive step-by-step guide for diagnosing and resolving common network connectivity issues including LAN/WAN, VPN, and wireless problems.</p>
-                    <div class="doc-tags">
-                        <span class="tag-small">Networking</span>
-                        <span class="tag-small">Troubleshooting</span>
-                        <span class="tag-small">VPN</span>
-                    </div>
-                    <a href="docs/network-troubleshooting.html" class="doc-link">View Documentation →</a>
-                </div>
-
-                <div class="doc-card">
-                    <div class="doc-icon">🖥️</div>
-                    <h3>Workstation Setup & Imaging</h3>
-                    <p class="doc-category">Hardware & Systems</p>
-                    <p class="doc-description">Standard operating procedure for setting up new workstations, including hardware assembly, OS installation, domain joining, and software deployment.</p>
-                    <div class="doc-tags">
-                        <span class="tag-small">Hardware</span>
-                        <span class="tag-small">Windows</span>
-                        <span class="tag-small">SOP</span>
-                    </div>
-                    <a href="docs/workstation-setup.html" class="doc-link">View Documentation →</a>
-                </div>
-
-                <div class="doc-card">
-                    <div class="doc-icon">📹</div>
-                    <h3>IP Camera & NVR Configuration</h3>
-                    <p class="doc-category">Security Systems</p>
-                    <p class="doc-description">Complete guide for installing and configuring IP camera systems and Network Video Recorders, including network configuration and troubleshooting.</p>
-                    <div class="doc-tags">
-                        <span class="tag-small">Security</span>
-                        <span class="tag-small">IP Cameras</span>
-                        <span class="tag-small">Configuration</span>
-                    </div>
-                    <a href="docs/ip-camera-nvr.html" class="doc-link">View Documentation →</a>
-                </div>
-
-                <div class="doc-card">
-                    <div class="doc-icon">🔐</div>
-                    <h3>Active Directory User Management</h3>
-                    <p class="doc-category">System Administration</p>
-                    <p class="doc-description">Procedures for managing Active Directory users, groups, and permissions, including onboarding/offboarding workflows and security best practices.</p>
-                    <div class="doc-tags">
-                        <span class="tag-small">Active Directory</span>
-                        <span class="tag-small">Security</span>
-                        <span class="tag-small">User Management</span>
-                    </div>
-                    <a href="docs/active-directory.html" class="doc-link">View Documentation →</a>
-                </div>
-
-                <div class="doc-card">
-                    <div class="doc-icon">⚙️</div>
-                    <h3>PowerShell Automation Scripts</h3>
-                    <p class="doc-category">Automation & Scripting</p>
-                    <p class="doc-description">Collection of PowerShell scripts for common IT tasks with detailed usage instructions, including system diagnostics, user provisioning, and reporting.</p>
-                    <div class="doc-tags">
-                        <span class="tag-small">PowerShell</span>
-                        <span class="tag-small">Automation</span>
-                        <span class="tag-small">Scripts</span>
-                    </div>
-                    <a href="docs/powershell-scripts.html" class="doc-link">View Documentation →</a>
-                </div>
-
-                <div class="doc-card">
-                    <div class="doc-icon">🎛️</div>
-                    <h3>Router & Switch Configuration</h3>
-                    <p class="doc-category">Network Infrastructure</p>
-                    <p class="doc-description">Step-by-step procedures for configuring enterprise routers and switches, including VLAN setup, port configuration, and basic security hardening.</p>
-                    <div class="doc-tags">
-                        <span class="tag-small">Networking</span>
-                        <span class="tag-small">Configuration</span>
-                        <span class="tag-small">Infrastructure</span>
-                    </div>
-                    <a href="docs/router-switch-config.html" class="doc-link">View Documentation →</a>
-                </div>
-
-                <div class="doc-card">
-                    <div class="doc-icon">🛠️</div>
-                    <h3>Hardware Diagnostics Procedures</h3>
-                    <p class="doc-category">Hardware & Troubleshooting</p>
-                    <p class="doc-description">Systematic approach to diagnosing hardware failures in desktops and laptops, including component testing and replacement procedures.</p>
-                    <div class="doc-tags">
-                        <span class="tag-small">Hardware</span>
-                        <span class="tag-small">Diagnostics</span>
-                        <span class="tag-small">Troubleshooting</span>
-                    </div>
-                    <a href="docs/hardware-diagnostics.html" class="doc-link">View Documentation →</a>
-                </div>
-
-                <div class="doc-card">
-                    <div class="doc-icon">📊</div>
-                    <h3>Ticketing System Best Practices</h3>
-                    <p class="doc-category">IT Operations</p>
-                    <p class="doc-description">Guidelines for effective ticket documentation, prioritization, and resolution tracking to improve team efficiency and user satisfaction.</p>
-                    <div class="doc-tags">
-                        <span class="tag-small">ITSM</span>
-                        <span class="tag-small">Best Practices</span>
-                        <span class="tag-small">Operations</span>
-                    </div>
-                    <a href="docs/ticketing-best-practices.html" class="doc-link">View Documentation →</a>
-                </div>
-            </div>
-
-            <div class="doc-footer">
-                <h3>Documentation Philosophy</h3>
-                <p>I believe effective technical documentation should be:</p>
-                <ul class="philosophy-list">
-                    <li><strong>Clear and Concise:</strong> Written in plain language with minimal jargon</li>
-                    <li><strong>Actionable:</strong> Step-by-step procedures that anyone can follow</li>
-                    <li><strong>Visual:</strong> Includes screenshots, diagrams, and examples where helpful</li>
-                    <li><strong>Maintained:</strong> Regularly updated to reflect current systems and best practices</li>
-                    <li><strong>Accessible:</strong> Organized and searchable for quick reference</li>
-                </ul>
-            </div>
+      <div class="container">
+        <div class="doc-intro">
+          <p>
+            Documentation is a critical component of effective IT support. Below
+            you'll find examples of technical guides, standard operating
+            procedures, and troubleshooting documentation I've created
+            throughout my career. These documents demonstrate my ability to
+            translate complex technical concepts into clear, actionable
+            instructions.
+          </p>
         </div>
+
+        <div class="docs-grid">
+          <!-- Documentation Card Template -->
+          <div class="doc-card">
+            <div class="doc-icon">📡</div>
+            <h3>Network Troubleshooting Guide</h3>
+            <p class="doc-category">Network Infrastructure</p>
+            <p class="doc-description">
+              Comprehensive step-by-step guide for diagnosing and resolving
+              common network connectivity issues including LAN/WAN, VPN, and
+              wireless problems.
+            </p>
+            <div class="doc-tags">
+              <span class="tag-small">Networking</span>
+              <span class="tag-small">Troubleshooting</span>
+              <span class="tag-small">VPN</span>
+            </div>
+            <a href="docs/network-troubleshooting.html" class="doc-link"
+              >View Documentation →</a
+            >
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">🖥️</div>
+            <h3>Workstation Setup & Imaging</h3>
+            <p class="doc-category">Hardware & Systems</p>
+            <p class="doc-description">
+              Standard operating procedure for setting up new workstations,
+              including hardware assembly, OS installation, domain joining, and
+              software deployment.
+            </p>
+            <div class="doc-tags">
+              <span class="tag-small">Hardware</span>
+              <span class="tag-small">Windows</span>
+              <span class="tag-small">SOP</span>
+            </div>
+            <p class="doc-link">Coming soon.</p>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">📹</div>
+            <h3>IP Camera & NVR Configuration</h3>
+            <p class="doc-category">Security Systems</p>
+            <p class="doc-description">
+              Complete guide for installing and configuring IP camera systems
+              and Network Video Recorders, including network configuration and
+              troubleshooting.
+            </p>
+            <div class="doc-tags">
+              <span class="tag-small">Security</span>
+              <span class="tag-small">IP Cameras</span>
+              <span class="tag-small">Configuration</span>
+            </div>
+            <p class="doc-link">Coming soon.</p>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">🔐</div>
+            <h3>Active Directory User Management</h3>
+            <p class="doc-category">System Administration</p>
+            <p class="doc-description">
+              Procedures for managing Active Directory users, groups, and
+              permissions, including onboarding/offboarding workflows and
+              security best practices.
+            </p>
+            <div class="doc-tags">
+              <span class="tag-small">Active Directory</span>
+              <span class="tag-small">Security</span>
+              <span class="tag-small">User Management</span>
+            </div>
+            <p class="doc-link">Coming soon.</p>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">⚙️</div>
+            <h3>PowerShell Automation Scripts</h3>
+            <p class="doc-category">Automation & Scripting</p>
+            <p class="doc-description">
+              Collection of PowerShell scripts for common IT tasks with detailed
+              usage instructions, including system diagnostics, user
+              provisioning, and reporting.
+            </p>
+            <div class="doc-tags">
+              <span class="tag-small">PowerShell</span>
+              <span class="tag-small">Automation</span>
+              <span class="tag-small">Scripts</span>
+            </div>
+            <p class="doc-link">Coming soon.</p>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">🎛️</div>
+            <h3>Router & Switch Configuration</h3>
+            <p class="doc-category">Network Infrastructure</p>
+            <p class="doc-description">
+              Step-by-step procedures for configuring enterprise routers and
+              switches, including VLAN setup, port configuration, and basic
+              security hardening.
+            </p>
+            <div class="doc-tags">
+              <span class="tag-small">Networking</span>
+              <span class="tag-small">Configuration</span>
+              <span class="tag-small">Infrastructure</span>
+            </div>
+            <p class="doc-link">Coming soon.</p>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">🛠️</div>
+            <h3>Hardware Diagnostics Procedures</h3>
+            <p class="doc-category">Hardware & Troubleshooting</p>
+            <p class="doc-description">
+              Systematic approach to diagnosing hardware failures in desktops
+              and laptops, including component testing and replacement
+              procedures.
+            </p>
+            <div class="doc-tags">
+              <span class="tag-small">Hardware</span>
+              <span class="tag-small">Diagnostics</span>
+              <span class="tag-small">Troubleshooting</span>
+            </div>
+            <p class="doc-link">Coming soon.</p>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-icon">📊</div>
+            <h3>Ticketing System Best Practices</h3>
+            <p class="doc-category">IT Operations</p>
+            <p class="doc-description">
+              Guidelines for effective ticket documentation, prioritization, and
+              resolution tracking to improve team efficiency and user
+              satisfaction.
+            </p>
+            <div class="doc-tags">
+              <span class="tag-small">ITSM</span>
+              <span class="tag-small">Best Practices</span>
+              <span class="tag-small">Operations</span>
+            </div>
+            <p class="doc-link">Coming soon.</p>
+          </div>
+        </div>
+
+        <div class="doc-footer">
+          <h3>Documentation Philosophy</h3>
+          <p>I believe effective technical documentation should be:</p>
+          <ul class="philosophy-list">
+            <li>
+              <strong>Clear and Concise:</strong> Written in plain language with
+              minimal jargon
+            </li>
+            <li>
+              <strong>Actionable:</strong> Step-by-step procedures that anyone
+              can follow
+            </li>
+            <li>
+              <strong>Visual:</strong> Includes screenshots, diagrams, and
+              examples where helpful
+            </li>
+            <li>
+              <strong>Maintained:</strong> Regularly updated to reflect current
+              systems and best practices
+            </li>
+            <li>
+              <strong>Accessible:</strong> Organized and searchable for quick
+              reference
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section class="cta-section">
-        <div class="container">
-            <h2>Need Custom Documentation?</h2>
-            <p>I can create tailored technical documentation for your organization's specific systems and procedures.</p>
-            <a href="index.html#contact" class="btn btn-primary">Get In Touch</a>
-        </div>
+      <div class="container">
+        <h2>Need Custom Documentation?</h2>
+        <p>
+          I can create tailored technical documentation for your organization's
+          specific systems and procedures.
+        </p>
+        <a href="index.html#contact" class="btn btn-primary">Get In Touch</a>
+      </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Ryan Grieb. All rights reserved.</p>
-        </div>
+      <div class="container">
+        <p>Ryan Grieb - IT Professional</p>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

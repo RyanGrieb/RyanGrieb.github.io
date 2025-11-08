@@ -1,222 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Network Troubleshooting Guide | Ryan Grieb</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        .doc-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-        
-        .doc-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-        
-        .doc-meta {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px solid var(--border-color);
-            font-size: 0.95rem;
-            color: var(--text-light);
-        }
-        
-        .doc-content h2 {
-            font-size: 1.75rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            text-align: left;
-        }
-        
-        .doc-content h3 {
-            font-size: 1.35rem;
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-dark);
-            text-align: left;
-        }
-        
-        .doc-content p {
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 1.25rem;
-        }
-        
-        .doc-content ul, .doc-content ol {
-            margin-bottom: 1.5rem;
-            padding-left: 2rem;
-        }
-        
-        .doc-content li {
-            color: var(--text-light);
-            margin-bottom: 0.75rem;
-            line-height: 1.7;
-        }
-        
-        .doc-content code {
-            background-color: var(--bg-light);
-            padding: 0.2rem 0.4rem;
-            border-radius: 0.25rem;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            color: var(--text-dark);
-        }
-        
-        .doc-content pre {
-            background-color: var(--text-dark);
-            color: #f8fafc;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            overflow-x: auto;
-            margin-bottom: 1.5rem;
-        }
-        
-        .doc-content pre code {
-            background-color: transparent;
-            color: #f8fafc;
-            padding: 0;
-        }
-        
-        .note-box {
-            background-color: #eff6ff;
-            border-left: 4px solid var(--primary-color);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0.375rem;
-        }
-        
-        .note-box strong {
-            color: var(--primary-color);
-        }
-        
-        .warning-box {
-            background-color: #fef3c7;
-            border-left: 4px solid #f59e0b;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0.375rem;
-        }
-        
-        .warning-box strong {
-            color: #f59e0b;
-        }
-        
-        .back-link {
-            display: inline-block;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .back-link:hover {
-            text-decoration: underline;
-        }
+      .doc-content {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+      }
+
+      .doc-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+      }
+
+      .doc-meta {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid var(--border-color);
+        font-size: 0.95rem;
+        color: var(--text-light);
+      }
+
+      .doc-content h2 {
+        font-size: 1.75rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+        text-align: left;
+      }
+
+      .doc-content h3 {
+        font-size: 1.35rem;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+        color: var(--text-dark);
+        text-align: left;
+      }
+
+      .doc-content p {
+        color: var(--text-light);
+        line-height: 1.8;
+        margin-bottom: 1.25rem;
+      }
+
+      .doc-content ul,
+      .doc-content ol {
+        margin-bottom: 1.5rem;
+        padding-left: 2rem;
+      }
+
+      .doc-content li {
+        color: var(--text-light);
+        margin-bottom: 0.75rem;
+        line-height: 1.7;
+      }
+
+      .doc-content code {
+        background-color: var(--bg-light);
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.25rem;
+        font-family: "Courier New", monospace;
+        font-size: 0.9em;
+        color: var(--text-dark);
+      }
+
+      .doc-content pre {
+        background-color: var(--text-dark);
+        color: #f8fafc;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        margin-bottom: 1.5rem;
+      }
+
+      .doc-content pre code {
+        background-color: transparent;
+        color: #f8fafc;
+        padding: 0;
+      }
+
+      .note-box {
+        background-color: #eff6ff;
+        border-left: 4px solid var(--primary-color);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0.375rem;
+      }
+
+      .note-box strong {
+        color: var(--primary-color);
+      }
+
+      .warning-box {
+        background-color: #fef3c7;
+        border-left: 4px solid #f59e0b;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0.375rem;
+      }
+
+      .warning-box strong {
+        color: #f59e0b;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 2rem;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">Ryan Grieb</div>
-            <ul class="nav-menu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../index.html#about">About</a></li>
-                <li><a href="../index.html#experience">Experience</a></li>
-                <li><a href="../index.html#skills">Skills</a></li>
-                <li><a href="../documentation.html" class="active">Documentation</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
-            </ul>
-        </div>
+      <div class="nav-container">
+        <div class="nav-brand">Ryan Grieb</div>
+        <ul class="nav-menu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li>
+            <a href="../documentation.html" class="active">Documentation</a>
+          </li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
     <div class="doc-content">
-        <a href="../documentation.html" class="back-link">← Back to Documentation</a>
-        
-        <h1>Network Troubleshooting Guide</h1>
-        
-        <div class="doc-meta">
-            <div><strong>Category:</strong> Network Infrastructure</div>
-            <div><strong>Last Updated:</strong> November 2024</div>
-            <div><strong>Difficulty:</strong> Intermediate</div>
-        </div>
+      <a href="../documentation.html" class="back-link"
+        >← Back to Documentation</a
+      >
 
-        <!-- 
-        ═══════════════════════════════════════════════════════════════
-        INSTRUCTIONS FOR YOU:
-        
-        This is a TEMPLATE file. To add your own documentation:
-        
-        1. Copy this file for each piece of documentation
-        2. Replace the content below with your own markdown content
-        3. Keep the same HTML structure (navbar, doc-content, etc.)
-        4. Use the style classes provided (note-box, warning-box, etc.)
-        5. Update the filename in documentation.html to match
-        
-        You can paste your .md content directly and convert it to HTML,
-        or I can help you convert your markdown files to HTML pages.
-        ═══════════════════════════════════════════════════════════════
-        -->
+      <h1>Network Troubleshooting Guide</h1>
 
-        <h2>Overview</h2>
-        <p>This guide provides a systematic approach to diagnosing and resolving common network connectivity issues in enterprise environments. Whether dealing with LAN, WAN, VPN, or wireless problems, following these procedures will help isolate and fix issues efficiently.</p>
+      <div class="doc-meta">
+        <div><strong>Category:</strong> Network Infrastructure</div>
+        <div><strong>Last Updated:</strong> November 2025</div>
+        <div><strong>Difficulty:</strong> Intermediate</div>
+      </div>
 
-        <h2>Prerequisites</h2>
-        <ul>
-            <li>Basic understanding of TCP/IP networking</li>
-            <li>Access to network diagnostic tools (ping, traceroute, ipconfig/ifconfig)</li>
-            <li>Administrative credentials for network devices</li>
-            <li>Physical access to relevant network equipment</li>
-        </ul>
+      <h2>Overview</h2>
+      <p>
+        This guide provides a systematic approach to diagnosing and resolving
+        common network connectivity issues in enterprise environments. Whether
+        dealing with LAN, WAN, VPN, or wireless problems, following these
+        procedures will help isolate and fix issues efficiently.
+      </p>
 
-        <h2>Step 1: Initial Assessment</h2>
-        <p>Before diving into technical troubleshooting, gather basic information about the issue:</p>
-        
-        <ol>
-            <li><strong>Scope:</strong> Is the problem affecting a single user, multiple users, or the entire network?</li>
-            <li><strong>Timing:</strong> When did the problem start? Is it intermittent or constant?</li>
-            <li><strong>Recent Changes:</strong> Were there any recent changes to the network, hardware, or software?</li>
-            <li><strong>Error Messages:</strong> Document any specific error messages or symptoms</li>
-        </ol>
+      <h2>Prerequisites</h2>
+      <ul>
+        <li>Basic understanding of TCP/IP networking</li>
+        <li>
+          Access to network diagnostic tools (ping, traceroute,
+          ipconfig/ifconfig)
+        </li>
+        <li>Administrative credentials for network devices</li>
+        <li>Physical access to relevant network equipment</li>
+      </ul>
 
-        <div class="note-box">
-            <strong>Pro Tip:</strong> Always start by checking if the problem is isolated to a single device or affects multiple users. This immediately helps narrow down whether it's a local or network-wide issue.
-        </div>
+      <h2>Step 1: Initial Assessment</h2>
+      <p>
+        Before diving into technical troubleshooting, gather basic information
+        about the issue:
+      </p>
 
-        <h2>Step 2: Physical Layer Verification</h2>
-        <p>Check all physical connections before moving to software diagnostics:</p>
-        
-        <h3>Cable Connections</h3>
-        <ul>
-            <li>Verify Ethernet cables are firmly connected</li>
-            <li>Check for damaged or bent cables</li>
-            <li>Ensure cables are plugged into correct ports</li>
-            <li>Look for link lights on network adapters and switches</li>
-        </ul>
+      <ol>
+        <li>
+          <strong>Scope:</strong> Is the problem affecting a single user,
+          multiple users, or the entire network?
+        </li>
+        <li>
+          <strong>Timing:</strong> When did the problem start? Is it
+          intermittent or constant?
+        </li>
+        <li>
+          <strong>Recent Changes:</strong> Were there any recent changes to the
+          network, hardware, or software?
+        </li>
+        <li>
+          <strong>Error Messages:</strong> Document any specific error messages
+          or symptoms
+        </li>
+      </ol>
 
-        <h3>Hardware Status</h3>
-        <ul>
-            <li>Confirm network adapters are enabled in Device Manager</li>
-            <li>Check router/switch status lights</li>
-            <li>Verify power to all network equipment</li>
-            <li>Test with known-good cables if available</li>
-        </ul>
+      <div class="note-box">
+        <strong>Pro Tip:</strong> Always start by checking if the problem is
+        isolated to a single device or affects multiple users. This immediately
+        helps narrow down whether it's a local or network-wide issue.
+      </div>
 
-        <h2>Step 3: Basic Connectivity Tests</h2>
-        <p>Use command-line tools to test basic connectivity:</p>
+      <h2>Step 2: Physical Layer Verification</h2>
+      <p>
+        Check all physical connections before moving to software diagnostics:
+      </p>
 
-        <h3>Windows Commands</h3>
-        <pre><code># Check IP configuration
+      <h3>Cable Connections</h3>
+      <ul>
+        <li>Verify Ethernet cables are firmly connected</li>
+        <li>Check for damaged or bent cables</li>
+        <li>Ensure cables are plugged into correct ports</li>
+        <li>Look for link lights on network adapters and switches</li>
+      </ul>
+
+      <h3>Hardware Status</h3>
+      <ul>
+        <li>Confirm network adapters are enabled in Device Manager</li>
+        <li>Check router/switch status lights</li>
+        <li>Verify power to all network equipment</li>
+        <li>Test with known-good cables if available</li>
+      </ul>
+
+      <h2>Step 3: Basic Connectivity Tests</h2>
+      <p>Use command-line tools to test basic connectivity:</p>
+
+      <h3>Windows Commands</h3>
+      <pre><code># Check IP configuration
 ipconfig /all
 
 # Release and renew DHCP lease
@@ -235,8 +253,8 @@ ping 8.8.8.8
 # Trace route to destination
 tracert google.com</code></pre>
 
-        <h3>Linux/Mac Commands</h3>
-        <pre><code># Check IP configuration
+      <h3>Linux/Mac Commands</h3>
+      <pre><code># Check IP configuration
 ifconfig
 # or
 ip addr show
@@ -250,10 +268,10 @@ ping -c 4 8.8.8.8
 # Trace route to destination
 traceroute google.com</code></pre>
 
-        <h2>Step 4: DNS Resolution Testing</h2>
-        <p>Many connectivity issues are actually DNS problems in disguise:</p>
+      <h2>Step 4: DNS Resolution Testing</h2>
+      <p>Many connectivity issues are actually DNS problems in disguise:</p>
 
-        <pre><code># Test DNS resolution (Windows)
+      <pre><code># Test DNS resolution (Windows)
 nslookup google.com
 
 # Test DNS resolution (Linux/Mac)
@@ -262,61 +280,69 @@ dig google.com
 # Test with alternative DNS server
 nslookup google.com 8.8.8.8</code></pre>
 
-        <div class="note-box">
-            <strong>Common Finding:</strong> If you can ping IP addresses (like 8.8.8.8) but not domain names (like google.com), you have a DNS issue, not a connectivity issue.
-        </div>
+      <div class="note-box">
+        <strong>Common Finding:</strong> If you can ping IP addresses (like
+        8.8.8.8) but not domain names (like google.com), you have a DNS issue,
+        not a connectivity issue.
+      </div>
 
-        <h2>Step 5: DHCP Troubleshooting</h2>
-        <p>If the device isn't getting an IP address:</p>
+      <h2>Step 5: DHCP Troubleshooting</h2>
+      <p>If the device isn't getting an IP address:</p>
 
-        <ol>
-            <li>Check if the device has a valid IP address (not 169.254.x.x)</li>
-            <li>Verify DHCP service is running on the server/router</li>
-            <li>Check DHCP scope for available addresses</li>
-            <li>Ensure DHCP is not being blocked by firewall</li>
-            <li>Try assigning a static IP address temporarily to isolate the issue</li>
-        </ol>
+      <ol>
+        <li>Check if the device has a valid IP address (not 169.254.x.x)</li>
+        <li>Verify DHCP service is running on the server/router</li>
+        <li>Check DHCP scope for available addresses</li>
+        <li>Ensure DHCP is not being blocked by firewall</li>
+        <li>
+          Try assigning a static IP address temporarily to isolate the issue
+        </li>
+      </ol>
 
-        <h2>Step 6: Wireless-Specific Issues</h2>
-        <p>For wireless connectivity problems:</p>
+      <h2>Step 6: Wireless-Specific Issues</h2>
+      <p>For wireless connectivity problems:</p>
 
-        <ul>
-            <li>Verify wireless adapter is enabled</li>
-            <li>Check signal strength (should be above -70 dBm for good performance)</li>
-            <li>Ensure correct SSID and password</li>
-            <li>Test on 2.4GHz vs 5GHz bands</li>
-            <li>Check for interference from other devices</li>
-            <li>Verify AP is not at capacity (device limit reached)</li>
-        </ul>
+      <ul>
+        <li>Verify wireless adapter is enabled</li>
+        <li>
+          Check signal strength (should be above -70 dBm for good performance)
+        </li>
+        <li>Ensure correct SSID and password</li>
+        <li>Test on 2.4GHz vs 5GHz bands</li>
+        <li>Check for interference from other devices</li>
+        <li>Verify AP is not at capacity (device limit reached)</li>
+      </ul>
 
-        <div class="warning-box">
-            <strong>Security Note:</strong> Always verify you're connecting to the correct wireless network. Rogue access points can have similar names to legitimate networks.
-        </div>
+      <div class="warning-box">
+        <strong>Security Note:</strong> Always verify you're connecting to the
+        correct wireless network. Rogue access points can have similar names to
+        legitimate networks.
+      </div>
 
-        <h2>Step 7: VPN Troubleshooting</h2>
-        <p>For VPN connectivity issues:</p>
+      <h2>Step 7: VPN Troubleshooting</h2>
+      <p>For VPN connectivity issues:</p>
 
-        <ul>
-            <li>Verify VPN client is up-to-date</li>
-            <li>Check user credentials and certificates</li>
-            <li>Ensure VPN server is reachable (ping or telnet to VPN port)</li>
-            <li>Verify firewall isn't blocking VPN protocols</li>
-            <li>Check split tunneling configuration</li>
-            <li>Review VPN logs for specific error messages</li>
-        </ul>
+      <ul>
+        <li>Verify VPN client is up-to-date</li>
+        <li>Check user credentials and certificates</li>
+        <li>Ensure VPN server is reachable (ping or telnet to VPN port)</li>
+        <li>Verify firewall isn't blocking VPN protocols</li>
+        <li>Check split tunneling configuration</li>
+        <li>Review VPN logs for specific error messages</li>
+      </ul>
 
-        <h2>Step 8: Advanced Diagnostics</h2>
-        <p>If basic troubleshooting doesn't resolve the issue:</p>
+      <h2>Step 8: Advanced Diagnostics</h2>
+      <p>If basic troubleshooting doesn't resolve the issue:</p>
 
-        <h3>Packet Analysis</h3>
-        <ul>
-            <li>Use Wireshark to capture and analyze network traffic</li>
-            <li>Look for dropped packets, retransmissions, or errors</li>
-            <li>Verify proper TCP handshakes are completing</li>
-        </ul>
+      <h3>Packet Analysis</h3>
+      <ul>
+        <li>Use Wireshark to capture and analyze network traffic</li>
+        <li>Look for dropped packets, retransmissions, or errors</li>
+        <li>Verify proper TCP handshakes are completing</li>
+      </ul>
 
-        <h3>Port Testing</h3>
-        <pre><code># Test if specific port is open (Windows)
+      <h3>Port Testing</h3>
+      <pre><code># Test if specific port is open (Windows)
 Test-NetConnection -ComputerName server.com -Port 443
 
 # Test if specific port is open (Linux)
@@ -324,54 +350,61 @@ telnet server.com 443
 # or
 nc -zv server.com 443</code></pre>
 
-        <h2>Documentation and Follow-up</h2>
-        <p>Once the issue is resolved:</p>
+      <h2>Documentation and Follow-up</h2>
+      <p>Once the issue is resolved:</p>
 
-        <ol>
-            <li>Document the problem, steps taken, and solution in your ticketing system</li>
-            <li>Update network diagrams if physical changes were made</li>
-            <li>Consider if similar issues might affect other users</li>
-            <li>Schedule follow-up with user to ensure stability</li>
-        </ol>
+      <ol>
+        <li>
+          Document the problem, steps taken, and solution in your ticketing
+          system
+        </li>
+        <li>Update network diagrams if physical changes were made</li>
+        <li>Consider if similar issues might affect other users</li>
+        <li>Schedule follow-up with user to ensure stability</li>
+      </ol>
 
-        <h2>Common Issues Quick Reference</h2>
-        
-        <h3>No Connectivity at All</h3>
-        <ul>
-            <li>Check physical connections and cables</li>
-            <li>Verify network adapter is enabled</li>
-            <li>Check if device has valid IP address</li>
-        </ul>
+      <h2>Common Issues Quick Reference</h2>
 
-        <h3>Intermittent Connectivity</h3>
-        <ul>
-            <li>Check for cable damage or loose connections</li>
-            <li>Look for wireless interference</li>
-            <li>Verify network equipment isn't overheating</li>
-            <li>Check for IP address conflicts</li>
-        </ul>
+      <h3>No Connectivity at All</h3>
+      <ul>
+        <li>Check physical connections and cables</li>
+        <li>Verify network adapter is enabled</li>
+        <li>Check if device has valid IP address</li>
+      </ul>
 
-        <h3>Slow Performance</h3>
-        <ul>
-            <li>Test bandwidth using speed test tools</li>
-            <li>Check for network congestion</li>
-            <li>Verify QoS settings if applicable</li>
-            <li>Look for malware or bandwidth-heavy applications</li>
-        </ul>
+      <h3>Intermittent Connectivity</h3>
+      <ul>
+        <li>Check for cable damage or loose connections</li>
+        <li>Look for wireless interference</li>
+        <li>Verify network equipment isn't overheating</li>
+        <li>Check for IP address conflicts</li>
+      </ul>
 
-        <div class="note-box">
-            <strong>Remember:</strong> Always work from the physical layer up through the OSI model. Don't skip steps—many complex problems have simple physical causes.
-        </div>
+      <h3>Slow Performance</h3>
+      <ul>
+        <li>Test bandwidth using speed test tools</li>
+        <li>Check for network congestion</li>
+        <li>Verify QoS settings if applicable</li>
+        <li>Look for malware or bandwidth-heavy applications</li>
+      </ul>
 
-        <a href="../documentation.html" class="back-link">← Back to Documentation</a>
+      <div class="note-box">
+        <strong>Remember:</strong> Always work from the physical layer up
+        through the OSI model. Don't skip steps—many complex problems have
+        simple physical causes.
+      </div>
+
+      <a href="../documentation.html" class="back-link"
+        >← Back to Documentation</a
+      >
     </div>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Ryan Grieb. All rights reserved.</p>
-        </div>
+      <div class="container">
+        <p>Ryan Grieb - IT Professional</p>
+      </div>
     </footer>
 
     <script src="../script.js"></script>
-</body>
+  </body>
 </html>
