@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Active Directory User Management Guide | Ryan Grieb</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">Ryan Grieb</div>
+        <ul class="nav-menu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li>
+            <a href="../documentation.html" class="active">Documentation</a>
+          </li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="doc-content">
+      <a href="../documentation.html" class="back-link"
+        >← Back to Documentation</a
+      >
+
+      <h1>Active Directory User Management Guide</h1>
+
+      <div class="doc-meta">
+        <div><strong>Category:</strong> Identity & Access Management</div>
+        <div><strong>Last Updated:</strong> November 2025</div>
+        <div><strong>Difficulty:</strong> Beginner to Intermediate</div>
+      </div>
+
+      <h2>Overview</h2>
+      <p>
+        Active Directory (AD) is Microsoft's directory service for Windows
+        domain networks. It stores information about network resources and makes
+        this data available to users and administrators. This guide covers the
+        fundamental tasks of managing user accounts in Active Directory,
+        including creating, modifying, and troubleshooting user accounts with a
+        focus on common password-related issues.
+      </p>
+
+      <h2>Prerequisites</h2>
+      <ul>
+        <li>Domain administrator or delegated user management permissions</li>
+        <li>
+          Access to a Windows Server with Active Directory Domain Services
+        </li>
+        <li>
+          Remote Server Administration Tools (RSAT) installed if managing
+          remotely
+        </li>
+        <li>
+          Understanding of your organization's OU (Organizational Unit)
+          structure
+        </li>
+        <li>Knowledge of company naming conventions and password policies</li>
+      </ul>
+
+      <h2>Accessing Active Directory Users and Computers</h2>
+      <p>
+        The Active Directory Users and Computers (ADUC) console is the primary
+        graphical tool for managing user accounts.
+      </p>
+
+      <ol>
+        <li>
+          <strong>On a Domain Controller:</strong> Click Start → Windows
+          Administrative Tools → Active Directory Users and Computers
+        </li>
+        <li>
+          <strong>On a Workstation with RSAT:</strong> Click Start → Search for
+          "Active Directory Users and Computers" or run
+          <code>dsa.msc</code> from the Run dialog (Win + R)
+        </li>
+        <li>
+          <strong>Verify Connection:</strong> Ensure you see your domain name in
+          the left pane and can expand the tree structure
+        </li>
+      </ol>
+
+      <div class="note-box">
+        <strong>Pro Tip:</strong> Pin Active Directory Users and Computers to
+        your taskbar if you manage users frequently. You can also create custom
+        MMC consoles with your most-used snap-ins.
+      </div>
+
+      <h2>Understanding Organizational Units (OUs)</h2>
+      <p>
+        Before creating users, familiarize yourself with your domain's OU
+        structure:
+      </p>
+
+      <ul>
+        <li>
+          OUs are containers that organize users, computers, and groups
+          hierarchically
+        </li>
+        <li>
+          They typically mirror your organizational structure (departments,
+          locations, roles)
+        </li>
+        <li>Group Policies are often applied at the OU level</li>
+        <li>
+          Common OU structures include: Users → Department → Role or Location →
+          Department → Users
+        </li>
+      </ul>
+
+      <p>
+        Navigate through your domain tree to find the appropriate OU where the
+        new user should be created. If unsure, consult your company's AD
+        documentation or ask a senior administrator.
+      </p>
+
+      <h2>Creating a New User Account</h2>
+      <p>
+        Follow these steps to create a new user account in Active Directory:
+      </p>
+
+      <ol>
+        <li>
+          In Active Directory Users and Computers, navigate to the appropriate
+          OU
+        </li>
+        <li>
+          Right-click the OU → Select <strong>New</strong> →
+          <strong>User</strong>
+        </li>
+        <li>
+          In the "New Object - User" dialog, fill in the following fields:
+          <ul>
+            <li>
+              <strong>First name:</strong> User's first name (e.g., "John")
+            </li>
+            <li><strong>Initials:</strong> Middle initial (optional)</li>
+            <li>
+              <strong>Last name:</strong> User's last name (e.g., "Smith")
+            </li>
+            <li>
+              <strong>Full name:</strong> Auto-populates, verify it's correct
+            </li>
+            <li>
+              <strong>User logon name:</strong> Username for logging in (e.g.,
+              "jsmith" or "john.smith")
+            </li>
+            <li>
+              <strong>User logon name (pre-Windows 2000):</strong> Usually
+              auto-fills, typically DOMAIN\username
+            </li>
+          </ul>
+        </li>
+        <li>Click <strong>Next</strong></li>
+        <li>
+          Set the initial password:
+          <ul>
+            <li>
+              <strong>Password:</strong> Enter a temporary password that meets
+              your domain's complexity requirements
+            </li>
+            <li><strong>Confirm password:</strong> Re-enter the password</li>
+            <li>
+              <strong>User must change password at next logon:</strong> Check
+              this box (recommended for security)
+            </li>
+            <li>
+              <strong>User cannot change password:</strong> Usually unchecked
+              unless it's a service account
+            </li>
+            <li>
+              <strong>Password never expires:</strong> Only check for service
+              accounts, never for regular users
+            </li>
+            <li>
+              <strong>Account is disabled:</strong> Check only if you're
+              creating the account in advance
+            </li>
+          </ul>
+        </li>
+        <li>Click <strong>Next</strong></li>
+        <li>Review the summary information</li>
+        <li>Click <strong>Finish</strong></li>
+      </ol>
+
+      <div class="warning-box">
+        <strong>Security Best Practice:</strong> Always check "User must change
+        password at next logon" when creating new accounts. Never share
+        passwords via email or unsecured channels. Use a secure method like a
+        phone call or password management system to communicate temporary
+        passwords.
+      </div>
+
+      <h2>Configuring Additional User Properties</h2>
+      <p>
+        After creating the user, configure additional properties by
+        right-clicking the user and selecting <strong>Properties</strong>:
+      </p>
+
+      <h3>General Tab</h3>
+      <ul>
+        <li>Description: Job title or role</li>
+        <li>Office: Physical location</li>
+        <li>Telephone number: Direct line</li>
+        <li>Email: Corporate email address</li>
+      </ul>
+
+      <h3>Account Tab</h3>
+      <ul>
+        <li>User logon name: Verify correct username</li>
+        <li>Logon hours: Restrict when user can log in (if needed)</li>
+        <li>Log On To: Restrict which computers user can access (if needed)</li>
+        <li>Account options: Additional security settings</li>
+        <li>Account expires: Set expiration date for temporary employees</li>
+      </ul>
+
+      <h3>Profile Tab</h3>
+      <ul>
+        <li>Profile path: Location of roaming profile (if applicable)</li>
+        <li>Logon script: Batch file to run at login (if applicable)</li>
+        <li>Home folder: User's network home directory</li>
+      </ul>
+
+      <h3>Member Of Tab</h3>
+      <ul>
+        <li>Add user to security groups based on their role</li>
+        <li>Groups control access to resources and applications</li>
+        <li>Click <strong>Add</strong> to search and add groups</li>
+      </ul>
+
+      <div class="note-box">
+        <strong>Important:</strong> Group membership is critical for access
+        control. Verify the user is added to all necessary groups for their
+        role, such as departmental groups, application access groups, and
+        resource groups.
+      </div>
+
+      <h2>Modifying Existing User Accounts</h2>
+      <p>To modify an existing user account:</p>
+
+      <ol>
+        <li>Locate the user in Active Directory Users and Computers</li>
+        <li>Right-click the user → Select <strong>Properties</strong></li>
+        <li>Navigate to the appropriate tab and make your changes</li>
+        <li>Click <strong>Apply</strong> then <strong>OK</strong></li>
+      </ol>
+
+      <h3>Common Modifications</h3>
+      <ul>
+        <li>
+          <strong>Name Change:</strong> General tab → Update first/last name
+        </li>
+        <li><strong>Email Change:</strong> General tab → Update email field</li>
+        <li>
+          <strong>Department Change:</strong> Organization tab → Update
+          department
+        </li>
+        <li>
+          <strong>Manager Change:</strong> Organization tab → Select new manager
+        </li>
+        <li>
+          <strong>Group Membership:</strong> Member Of tab → Add or remove
+          groups
+        </li>
+      </ul>
+
+      <h2>Password Management</h2>
+      <p>
+        Password management is one of the most common administrative tasks
+        you'll perform in Active Directory.
+      </p>
+
+      <h3>Resetting a User's Password</h3>
+      <ol>
+        <li>Locate the user account in ADUC</li>
+        <li>Right-click the user → Select <strong>Reset Password</strong></li>
+        <li>
+          Enter the new temporary password (must meet complexity requirements)
+        </li>
+        <li>Confirm the password</li>
+        <li>
+          Check
+          <strong>"User must change password at next logon"</strong> (highly
+          recommended)
+        </li>
+        <li>
+          Optionally check <strong>"Unlock the user's account"</strong> if the
+          account is locked
+        </li>
+        <li>Click <strong>OK</strong></li>
+        <li>Securely communicate the new password to the user</li>
+      </ol>
+
+      <h3>Forcing a Password Change</h3>
+      <p>To require a user to change their password at next logon:</p>
+      <ol>
+        <li>Right-click the user → <strong>Properties</strong></li>
+        <li>Go to the <strong>Account</strong> tab</li>
+        <li>
+          Check <strong>"User must change password at next logon"</strong>
+        </li>
+        <li>Click <strong>Apply</strong> then <strong>OK</strong></li>
+      </ol>
+
+      <h3>Unlocking a Locked Account</h3>
+      <ol>
+        <li>Right-click the user → <strong>Properties</strong></li>
+        <li>Go to the <strong>Account</strong> tab</li>
+        <li>Check the box <strong>"Unlock account"</strong></li>
+        <li>Click <strong>Apply</strong> then <strong>OK</strong></li>
+      </ol>
+
+      <div class="note-box">
+        <strong>Alternative Method:</strong> You can also unlock an account
+        while resetting the password by checking the "Unlock the user's account"
+        option in the Reset Password dialog.
+      </div>
+
+      <h2>Password Troubleshooting</h2>
+      <p>
+        This section covers common password-related issues and their solutions—a
+        frequent topic in technical interviews and daily support work.
+      </p>
+
+      <h3>Scenario 1: User Forgot Their Password</h3>
+      <p>
+        <strong>Symptoms:</strong> User cannot log in, states they forgot
+        password
+      </p>
+      <p><strong>Solution:</strong></p>
+      <ol>
+        <li>
+          Verify the user's identity (following your company's security policy)
+        </li>
+        <li>Reset the password using the steps in Step 6</li>
+        <li>Ensure "User must change password at next logon" is checked</li>
+        <li>Provide the temporary password securely</li>
+        <li>Have the user test logging in and changing the password</li>
+      </ol>
+
+      <h3>Scenario 2: Account is Locked Out</h3>
+      <p>
+        <strong>Symptoms:</strong> User receives "Account is locked out" or
+        similar error message
+      </p>
+      <p><strong>Solution:</strong></p>
+      <ol>
+        <li>
+          Verify the account is indeed locked:
+          <ul>
+            <li>Open user properties → Account tab</li>
+            <li>
+              Look for "Unlock account" checkbox (if grayed out with no
+              checkmark, account isn't locked)
+            </li>
+          </ul>
+        </li>
+        <li>
+          Investigate the cause of lockout:
+          <ul>
+            <li>Multiple failed login attempts</li>
+            <li>Old saved credentials on another device</li>
+            <li>Mobile device with cached old password</li>
+            <li>Mapped drives using old credentials</li>
+            <li>Scheduled tasks running with old credentials</li>
+          </ul>
+        </li>
+        <li>Unlock the account (Account tab → Check "Unlock account")</li>
+        <li>Ask user to clear cached credentials on all devices</li>
+        <li>If lockouts persist, review Event Logs to find the source</li>
+      </ol>
+
+      <h3>Scenario 3: Password Expired</h3>
+      <p>
+        <strong>Symptoms:</strong> User receives "Your password has expired"
+        message
+      </p>
+      <p><strong>Solution:</strong></p>
+      <ol>
+        <li>Verify password expiration in user properties → Account tab</li>
+        <li>
+          If expired, reset password or have user change it:
+          <ul>
+            <li>
+              At domain computer: User can press Ctrl+Alt+Del → Change Password
+            </li>
+            <li>Remotely: Admin resets via ADUC</li>
+          </ul>
+        </li>
+        <li>For service accounts, consider setting "Password never expires"</li>
+      </ol>
+
+      <h3>Scenario 4: "Your Password is Incorrect" Errors</h3>
+      <p>
+        <strong>Symptoms:</strong> User is certain they're using correct
+        password but receives incorrect password error
+      </p>
+      <p><strong>Troubleshooting Steps:</strong></p>
+      <ol>
+        <li>
+          <strong>Verify Caps Lock is off:</strong> Most common cause of this
+          issue
+        </li>
+        <li>
+          <strong>Check username:</strong> Ensure user is entering correct
+          username format (DOMAIN\username or username@domain.com)
+        </li>
+        <li>
+          <strong>Test on different computer:</strong> Isolates if issue is
+          machine-specific
+        </li>
+        <li>
+          <strong>Check account status:</strong> Verify account is not disabled
+          or locked
+        </li>
+        <li>
+          <strong>Verify password requirements:</strong> Ensure password meets
+          complexity requirements if recently changed
+        </li>
+        <li>
+          <strong>Check replication:</strong> Password changes may not have
+          replicated to all domain controllers yet (wait 15 minutes)
+        </li>
+        <li>
+          <strong>Review Group Policy:</strong> Check if any policies are
+          affecting authentication
+        </li>
+        <li>
+          <strong>Last resort:</strong> Reset the password and have user set a
+          new one
+        </li>
+      </ol>
+
+      <h3>Scenario 5: Cannot Reset Password (Insufficient Permissions)</h3>
+      <p>
+        <strong>Symptoms:</strong> Admin receives error when attempting to reset
+        password
+      </p>
+      <p><strong>Solution:</strong></p>
+      <ol>
+        <li>
+          Verify you have necessary permissions to reset passwords in that OU
+        </li>
+        <li>
+          Cannot reset passwords for users in higher-privileged groups (e.g.,
+          Domain Admins)
+        </li>
+        <li>Contact a higher-level administrator or domain admin</li>
+        <li>
+          Check if the user object has "Deny" permissions that override your
+          rights
+        </li>
+      </ol>
+
+      <div class="warning-box">
+        <strong>Security Note:</strong> Multiple consecutive lockouts may
+        indicate a brute-force attack or compromised credentials. Investigate
+        Event Logs for failed logon attempts from suspicious IP addresses or
+        unusual times.
+      </div>
+
+      <h2>Disabling and Enabling User Accounts</h2>
+      <p>
+        When employees leave or take extended leave, disable (don't delete)
+        their accounts:
+      </p>
+
+      <h3>Disabling an Account</h3>
+      <ol>
+        <li>Right-click the user account</li>
+        <li>Select <strong>Disable Account</strong></li>
+        <li>Confirm the action</li>
+        <li>A red "X" icon will appear on the user object</li>
+      </ol>
+
+      <h3>Enabling an Account</h3>
+      <ol>
+        <li>Right-click the disabled user account</li>
+        <li>Select <strong>Enable Account</strong></li>
+        <li>The red "X" icon will disappear</li>
+        <li>You may need to reset the password if it has expired</li>
+      </ol>
+
+      <div class="note-box">
+        <strong>Best Practice:</strong> Disable accounts for employees on leave
+        or who have left the company rather than deleting them immediately. This
+        preserves the account for potential return and maintains audit trails.
+        Set a policy to delete accounts after 90 days of being disabled.
+      </div>
+
+      <h2>Deleting User Accounts</h2>
+      <p>
+        Deleting accounts should be done carefully as it's usually not
+        reversible from the Recycle Bin unless AD Recycle Bin is enabled.
+      </p>
+
+      <h3>Before Deleting</h3>
+      <ul>
+        <li>Verify the account has been disabled for the required period</li>
+        <li>Ensure all data has been backed up or transferred</li>
+        <li>Document the deletion in your ticketing system</li>
+        <li>Get approval if required by company policy</li>
+      </ul>
+
+      <h3>Deletion Process</h3>
+      <ol>
+        <li>Right-click the user account</li>
+        <li>Select <strong>Delete</strong></li>
+        <li>Confirm the deletion warning</li>
+        <li>The account is moved to the Deleted Objects container</li>
+      </ol>
+
+      <div class="warning-box">
+        <strong>Important:</strong> Deleting a user account is permanent unless
+        AD Recycle Bin is enabled. The Security Identifier (SID) is lost
+        forever, meaning you cannot recreate the account with the same
+        permissions. Always disable first, delete later.
+      </div>
+
+      <h2>Best Practices and Security Considerations</h2>
+
+      <h3>Account Creation Best Practices</h3>
+      <ul>
+        <li>Follow consistent naming conventions across the organization</li>
+        <li>
+          Always use "User must change password at next logon" for new accounts
+        </li>
+        <li>Never set "Password never expires" for regular user accounts</li>
+        <li>Document account creation in your ticketing system</li>
+        <li>
+          Create accounts in the appropriate OU for proper Group Policy
+          application
+        </li>
+        <li>Assign only the minimum necessary groups and permissions</li>
+      </ul>
+
+      <h3>Password Security</h3>
+      <ul>
+        <li>Never share passwords via email, chat, or text message</li>
+        <li>Use complex temporary passwords that meet domain requirements</li>
+        <li>Communicate passwords through secure, approved channels only</li>
+        <li>Regularly audit accounts with "Password never expires" enabled</li>
+        <li>Implement Multi-Factor Authentication (MFA) where possible</li>
+      </ul>
+
+      <h3>Account Lifecycle Management</h3>
+      <ul>
+        <li>Disable accounts immediately when employees leave</li>
+        <li>
+          Set account expiration dates for contractors and temporary staff
+        </li>
+        <li>Regularly audit disabled accounts for potential deletion</li>
+        <li>
+          Review and remove unnecessary group memberships during offboarding
+        </li>
+        <li>Maintain documentation of all account changes</li>
+      </ul>
+
+      <h3>Troubleshooting Tips</h3>
+      <ul>
+        <li>Always verify identity before resetting passwords</li>
+        <li>
+          Check Event Logs for detailed information about lockouts and failures
+        </li>
+        <li>
+          Consider replication delays when password changes don't seem to work
+        </li>
+        <li>
+          Use "Find" (binoculars icon) to quickly locate users in large
+          directories
+        </li>
+        <li>
+          Enable "Advanced Features" (View menu) to access additional properties
+        </li>
+      </ul>
+
+      <h2>Quick Reference: Common Tasks</h2>
+
+      <h3>Create User</h3>
+      <p>
+        Right-click OU → New → User → Fill in details → Set temporary password →
+        Check "User must change password at next logon" → Finish
+      </p>
+
+      <h3>Reset Password</h3>
+      <p>
+        Right-click user → Reset Password → Enter new password → Check "User
+        must change password at next logon" → OK
+      </p>
+
+      <h3>Unlock Account</h3>
+      <p>
+        Right-click user → Properties → Account tab → Check "Unlock account" →
+        Apply → OK
+      </p>
+
+      <h3>Disable Account</h3>
+      <p>Right-click user → Disable Account → Confirm</p>
+
+      <h3>Add to Group</h3>
+      <p>
+        Right-click user → Properties → Member Of tab → Add → Search for group →
+        OK → Apply
+      </p>
+
+      <div class="note-box">
+        <strong>Remember:</strong> Active Directory changes usually replicate
+        within 15 minutes across all domain controllers. If changes don't appear
+        immediately on other systems, wait a few minutes before troubleshooting
+        further.
+      </div>
+
+      <a href="../documentation.html" class="back-link"
+        >← Back to Documentation</a
+      >
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Ryan Grieb - IT Professional</p>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
