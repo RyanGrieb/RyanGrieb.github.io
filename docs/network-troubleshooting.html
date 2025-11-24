@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Network Troubleshooting Guide | Ryan Grieb</title>
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/doc-toc.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,7 +13,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body id="top">
     <nav class="navbar">
       <div class="nav-container">
         <div class="nav-brand">Ryan Grieb</div>
@@ -42,7 +43,26 @@
         <div><strong>Difficulty:</strong> Intermediate</div>
       </div>
 
-      <h2>Overview</h2>
+      <!-- Table of Contents -->
+      <nav class="doc-toc">
+        <h2>Table of Contents</h2>
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#prerequisites">Prerequisites</a></li>
+          <li><a href="#step-1">Step 1: Initial Assessment</a></li>
+          <li><a href="#step-2">Step 2: Physical Layer Verification</a></li>
+          <li><a href="#step-3">Step 3: Basic Connectivity Tests</a></li>
+          <li><a href="#step-4">Step 4: DNS Resolution Testing</a></li>
+          <li><a href="#step-5">Step 5: DHCP Troubleshooting</a></li>
+          <li><a href="#step-6">Step 6: Wireless-Specific Issues</a></li>
+          <li><a href="#step-7">Step 7: VPN Troubleshooting</a></li>
+          <li><a href="#step-8">Step 8: Advanced Diagnostics</a></li>
+          <li><a href="#documentation">Documentation and Follow-up</a></li>
+          <li><a href="#common-issues">Common Issues Quick Reference</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="overview">Overview</h2>
       <p>
         This guide provides a systematic approach to diagnosing and resolving
         common network connectivity issues in enterprise environments. Whether
@@ -50,7 +70,7 @@
         procedures will help isolate and fix issues efficiently.
       </p>
 
-      <h2>Prerequisites</h2>
+      <h2 id="prerequisites">Prerequisites</h2>
       <ul>
         <li>Basic understanding of TCP/IP networking</li>
         <li>
@@ -61,7 +81,7 @@
         <li>Physical access to relevant network equipment</li>
       </ul>
 
-      <h2>Step 1: Initial Assessment</h2>
+      <h2 id="step-1">Step 1: Initial Assessment</h2>
       <p>
         Before diving into technical troubleshooting, gather basic information
         about the issue:
@@ -92,7 +112,7 @@
         helps narrow down whether it's a local or network-wide issue.
       </div>
 
-      <h2>Step 2: Physical Layer Verification</h2>
+      <h2 id="step-2">Step 2: Physical Layer Verification</h2>
       <p>
         Check all physical connections before moving to software diagnostics:
       </p>
@@ -113,7 +133,7 @@
         <li>Test with known-good cables if available</li>
       </ul>
 
-      <h2>Step 3: Basic Connectivity Tests</h2>
+      <h2 id="step-3">Step 3: Basic Connectivity Tests</h2>
       <p>Use command-line tools to test basic connectivity:</p>
 
       <h3>Windows Commands</h3>
@@ -151,7 +171,7 @@ ping -c 4 8.8.8.8
 # Trace route to destination
 traceroute google.com</code></pre>
 
-      <h2>Step 4: DNS Resolution Testing</h2>
+      <h2 id="step-4">Step 4: DNS Resolution Testing</h2>
       <p>Many connectivity issues are actually DNS problems in disguise:</p>
 
       <pre><code># Test DNS resolution (Windows)
@@ -169,7 +189,7 @@ nslookup google.com 8.8.8.8</code></pre>
         not a connectivity issue.
       </div>
 
-      <h2>Step 5: DHCP Troubleshooting</h2>
+      <h2 id="step-5">Step 5: DHCP Troubleshooting</h2>
       <p>If the device isn't getting an IP address:</p>
 
       <ol>
@@ -182,7 +202,7 @@ nslookup google.com 8.8.8.8</code></pre>
         </li>
       </ol>
 
-      <h2>Step 6: Wireless-Specific Issues</h2>
+      <h2 id="step-6">Step 6: Wireless-Specific Issues</h2>
       <p>For wireless connectivity problems:</p>
 
       <ul>
@@ -202,7 +222,7 @@ nslookup google.com 8.8.8.8</code></pre>
         legitimate networks.
       </div>
 
-      <h2>Step 7: VPN Troubleshooting</h2>
+      <h2 id="step-7">Step 7: VPN Troubleshooting</h2>
       <p>For VPN connectivity issues:</p>
 
       <ul>
@@ -214,7 +234,7 @@ nslookup google.com 8.8.8.8</code></pre>
         <li>Review VPN logs for specific error messages</li>
       </ul>
 
-      <h2>Step 8: Advanced Diagnostics</h2>
+      <h2 id="step-8">Step 8: Advanced Diagnostics</h2>
       <p>If basic troubleshooting doesn't resolve the issue:</p>
 
       <h3>Packet Analysis</h3>
@@ -233,7 +253,7 @@ telnet server.com 443
 # or
 nc -zv server.com 443</code></pre>
 
-      <h2>Documentation and Follow-up</h2>
+      <h2 id="documentation">Documentation and Follow-up</h2>
       <p>Once the issue is resolved:</p>
 
       <ol>
@@ -246,7 +266,7 @@ nc -zv server.com 443</code></pre>
         <li>Schedule follow-up with user to ensure stability</li>
       </ol>
 
-      <h2>Common Issues Quick Reference</h2>
+      <h2 id="common-issues">Common Issues Quick Reference</h2>
 
       <h3>No Connectivity at All</h3>
       <ul>
@@ -288,6 +308,12 @@ nc -zv server.com 443</code></pre>
       </div>
     </footer>
 
-    <script src="../script.js"></script>
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top"
+      >↑</a
+    >
+
+    <script src="../js/script.js"></script>
+    <script src="../js/back-to-top.js"></script>
   </body>
 </html>

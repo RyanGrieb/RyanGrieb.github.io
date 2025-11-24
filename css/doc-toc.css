@@ -1,0 +1,93 @@
+/* Additional styles for Table of Contents and Back to Top */
+.doc-toc {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.doc-toc h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem 0;
+  color: var(--text-dark);
+  text-align: left;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.doc-toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.doc-toc li {
+  margin: 0.25rem 0;
+}
+
+.doc-toc a {
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 0.6rem 0.75rem;
+  display: block;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  border-left: 3px solid transparent;
+}
+
+.doc-toc a:hover {
+  color: var(--primary-color);
+  background-color: var(--bg-light);
+  border-left: 3px solid var(--primary-color);
+  padding-left: 1rem;
+}
+
+/* Fix for navbar overlap on anchor jumps */
+h2[id],
+h3[id] {
+  scroll-margin-top: 5rem; /* Accounts for fixed navbar height */
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--primary-color);
+  color: white;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
+  }
+}
