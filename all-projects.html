@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ryan Grieb - Full project portfolio showcasing automation, web development, and infrastructure projects"
+    />
+    <title>Projects - Ryan Grieb</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">Ryan Grieb</div>
+        <ul class="nav-menu">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="index.html#credentials">Credentials</a></li>
+          <li><a href="all-projects.html">Projects</a></li>
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Full Project Portfolio</h1>
+        <p class="subtitle">
+          Automation tools, data pipelines, and open-source applications
+        </p>
+        <div class="cta-buttons">
+          <a href="#open-source" class="btn btn-secondary"
+            >Open Source Projects</a
+          >
+          <a href="index.html#contact" class="btn btn-primary">Get In Touch</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <h2>Automation & Data Pipeline Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Customer Service Automation Tool</h3>
+            <p class="project-tech">
+              Python | IMAP/SMTP | Flask | SQL | Docker
+            </p>
+            <p>
+              Engineered an automated system that processes and responds to
+              customer service estimate requests, achieving:
+            </p>
+            <ul>
+              <li>90% response accuracy rate</li>
+              <li>25+ requests processed monthly</li>
+              <li>Response time reduced from hours to minutes</li>
+              <li>Significant reduction in manual workload</li>
+            </ul>
+          </div>
+
+          <div class="project-card">
+            <h3>Medical Provider Database & ETL Pipeline</h3>
+            <p class="project-tech">Python | Data Aggregation | Azure SQL</p>
+            <p>
+              Built a scalable data collection and processing system for
+              healthcare provider information:
+            </p>
+            <ul>
+              <li>
+                Developed automated data aggregation system to compile 500,000+
+                physician records
+              </li>
+              <li>
+                Designed ETL pipeline: parsed JSON data, normalized records,
+                loaded into Azure SQL
+              </li>
+              <li>Generated Excel exports for data analysis and validation</li>
+            </ul>
+          </div>
+
+          <div class="project-card">
+            <h3>Embedded Systems Development</h3>
+            <p class="project-tech">Python | MavLink | Raspberry Pi</p>
+            <p>Contributed to autonomous underwater vehicle project:</p>
+            <ul>
+              <li>Developed Python control scripts via MavLink protocol</li>
+              <li>Integrated ESC modules and Raspberry Pi components</li>
+              <li>Implemented diagnostic monitoring systems</li>
+              <li>Hardware assembly and testing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="open-source" class="section section-alt">
+      <div class="container">
+        <h2>Open Source Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>OpenCiv</h3>
+            <p class="project-tech">
+              Node.js | Docker | TypeScript | HTML5 Canvas
+            </p>
+            <p>
+              A turn-based strategy game inspired by Civilization 5, playable
+              directly in a web browser. Focuses on improving aspects of the
+              classic 4X genre.
+            </p>
+            <div class="cta-buttons" style="margin-top: 1rem">
+              <a
+                href="https://github.com/RyanGrieb/OpenCiv"
+                target="_blank"
+                class="btn btn-tertiary"
+                >View Repository →</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>Exam Generator</h3>
+            <p class="project-tech">
+              Python | Docker | OpenAI API | PDF Processing
+            </p>
+            <p>
+              AI-powered web application that scans PDFs and documents to
+              automatically generate exams and quizzes.
+            </p>
+            <div class="cta-buttons" style="margin-top: 1rem">
+              <a
+                href="https://github.com/RyanGrieb/ExamGenerator"
+                target="_blank"
+                class="btn btn-tertiary"
+                >View Repository →</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>Ryan Grieb - IT Professional</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
