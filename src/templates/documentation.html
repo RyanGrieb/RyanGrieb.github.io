@@ -1,0 +1,269 @@
+{% extends "base.html" %} {% block title %}Documentation | Ryan Grieb{% endblock
+%} {% block description %}Technical Documentation by Ryan Grieb - IT procedures,
+troubleshooting guides, and system documentation{% endblock %} {% block content
+%}
+<!-- Hero Section -->
+<section
+  class="text-center text-white py-20 pb-16 bg-gradient-to-br from-[#667eea] to-[#764ba2]"
+>
+  <div class="max-w-4xl mx-auto px-4">
+    <h1 class="text-5xl font-extrabold mb-4 tracking-tight">
+      Technical Documentation
+    </h1>
+    <p class="text-2xl mb-10 opacity-95 max-w-4xl mx-auto">
+      A collection of IT procedures, troubleshooting guides, and system
+      documentation I've created to streamline operations and knowledge sharing.
+    </p>
+  </div>
+</section>
+
+<!-- Documentation Grid Section -->
+<section class="py-10 px-8 bg-slate-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Network Troubleshooting Guide -->
+      <a
+        href="docs/network-troubleshooting.html"
+        class="bg-white border border-slate-200 p-8 rounded-xl shadow-md transition-transform hover:shadow-lg flex flex-col h-full group"
+      >
+        <div class="text-4xl mb-4">📡</div>
+        <h3 class="text-2xl font-semibold mb-2 text-slate-800">
+          Network Troubleshooting Guide
+        </h3>
+        <p class="text-blue-600 font-semibold text-sm mb-4">
+          Network Infrastructure
+        </p>
+        <p class="text-slate-600 mb-4">
+          Comprehensive step-by-step guide for diagnosing and resolving common
+          network connectivity issues including LAN/WAN, VPN, and wireless
+          problems.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Networking</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Troubleshooting</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >VPN</span
+          >
+        </div>
+        <span
+          class="text-blue-600 group-hover:underline font-semibold mt-auto"
+          >View Documentation →</span
+        >
+      </a>
+
+      <!-- Active Directory User Management -->
+      <a
+        href="docs/active-directory.html"
+        class="bg-white border border-slate-200 p-8 rounded-xl shadow-md transition-transform hover:shadow-lg flex flex-col h-full group"
+      >
+        <div class="text-4xl mb-4">🔐</div>
+        <h3 class="text-2xl font-semibold mb-2 text-slate-800">
+          Active Directory User Management
+        </h3>
+        <p class="text-blue-600 font-semibold text-sm mb-4">
+          System Administration
+        </p>
+        <p class="text-slate-600 mb-4">
+          Procedures for managing Active Directory users, groups, and
+          permissions, including onboarding/offboarding workflows and security
+          best practices.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Active Directory</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Security</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >User Management</span
+          >
+        </div>
+        <span
+          class="text-blue-600 group-hover:underline font-semibold mt-auto"
+          >View Documentation →</span
+        >
+      </a>
+
+      <!-- Workstation Setup & Imaging -->
+      <div
+        class="bg-white border border-slate-200 p-8 rounded-xl shadow-md transition-transform hover:shadow-lg"
+      >
+        <div class="text-4xl mb-4">🖥️</div>
+        <h3 class="text-2xl font-semibold mb-2 text-slate-800">
+          Workstation Setup & Imaging
+        </h3>
+        <p class="text-blue-600 font-semibold text-sm mb-4">
+          Hardware & Systems
+        </p>
+        <p class="text-slate-600 mb-4">
+          Standard operating procedure for setting up new workstations,
+          including hardware assembly, OS installation, domain joining, and
+          software deployment.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Hardware</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Windows</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >SOP</span
+          >
+        </div>
+        <p class="text-slate-500">Coming soon.</p>
+      </div>
+
+      <!-- IP Camera & NVR Configuration -->
+      <div
+        class="bg-white border border-slate-200 p-8 rounded-xl shadow-md transition-transform hover:shadow-lg"
+      >
+        <div class="text-4xl mb-4">📹</div>
+        <h3 class="text-2xl font-semibold mb-2 text-slate-800">
+          IP Camera & NVR Configuration
+        </h3>
+        <p class="text-blue-600 font-semibold text-sm mb-4">Security Systems</p>
+        <p class="text-slate-600 mb-4">
+          Complete guide for installing and configuring IP camera systems and
+          Network Video Recorders, including network configuration and
+          troubleshooting.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Security</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >IP Cameras</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Configuration</span
+          >
+        </div>
+        <p class="text-slate-500">Coming soon.</p>
+      </div>
+
+      <!-- PowerShell Automation Scripts -->
+      <div
+        class="bg-white border border-slate-200 p-8 rounded-xl shadow-md transition-transform hover:shadow-lg"
+      >
+        <div class="text-4xl mb-4">⚙️</div>
+        <h3 class="text-2xl font-semibold mb-2 text-slate-800">
+          PowerShell Automation Scripts
+        </h3>
+        <p class="text-blue-600 font-semibold text-sm mb-4">
+          Automation & Scripting
+        </p>
+        <p class="text-slate-600 mb-4">
+          Collection of PowerShell scripts for common IT tasks with detailed
+          usage instructions, including system diagnostics, user provisioning,
+          and reporting.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >PowerShell</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Automation</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Scripts</span
+          >
+        </div>
+        <p class="text-slate-500">Coming soon.</p>
+      </div>
+
+      <!-- Router & Switch Configuration -->
+      <div
+        class="bg-white border border-slate-200 p-8 rounded-xl shadow-md transition-transform hover:shadow-lg"
+      >
+        <div class="text-4xl mb-4">🎛️</div>
+        <h3 class="text-2xl font-semibold mb-2 text-slate-800">
+          Router & Switch Configuration
+        </h3>
+        <p class="text-blue-600 font-semibold text-sm mb-4">
+          Network Infrastructure
+        </p>
+        <p class="text-slate-600 mb-4">
+          Step-by-step procedures for configuring enterprise routers and
+          switches, including VLAN setup, port configuration, and basic security
+          hardening.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Networking</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Configuration</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Infrastructure</span
+          >
+        </div>
+        <p class="text-slate-500">Coming soon.</p>
+      </div>
+
+      <!-- Hardware Diagnostics Procedures -->
+      <div
+        class="bg-white border border-slate-200 p-8 rounded-xl shadow-md transition-transform hover:shadow-lg"
+      >
+        <div class="text-4xl mb-4">🛠️</div>
+        <h3 class="text-2xl font-semibold mb-2 text-slate-800">
+          Hardware Diagnostics Procedures
+        </h3>
+        <p class="text-blue-600 font-semibold text-sm mb-4">
+          Hardware & Troubleshooting
+        </p>
+        <p class="text-slate-600 mb-4">
+          Systematic approach to diagnosing hardware failures in desktops and
+          laptops, including component testing and replacement procedures.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Hardware</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Diagnostics</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Troubleshooting</span
+          >
+        </div>
+        <p class="text-slate-500">Coming soon.</p>
+      </div>
+
+      <!-- Ticketing System Best Practices -->
+      <div
+        class="bg-white border border-slate-200 p-8 rounded-xl shadow-md transition-transform hover:shadow-lg"
+      >
+        <div class="text-4xl mb-4">📊</div>
+        <h3 class="text-2xl font-semibold mb-2 text-slate-800">
+          Ticketing System Best Practices
+        </h3>
+        <p class="text-blue-600 font-semibold text-sm mb-4">IT Operations</p>
+        <p class="text-slate-600 mb-4">
+          Guidelines for effective ticket documentation, prioritization, and
+          resolution tracking to improve team efficiency and user satisfaction.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >ITSM</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Best Practices</span
+          >
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+            >Operations</span
+          >
+        </div>
+        <p class="text-slate-500">Coming soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

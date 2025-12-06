@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title %}{% block doc_title %}Documentation{%
+endblock %}{% endblock %} {% block css_link %}<link
+  rel="stylesheet"
+  href="../css/styles.css"
+/>{% endblock %} {% block content %}
+<div class="max-w-4xl mx-auto px-8 py-12">
+  <a
+    href="../documentation.html"
+    class="inline-block mb-8 text-blue-600 hover:underline font-semibold transition-colors"
+  >
+    ← Back to Documentation
+  </a>
+
+  {% block doc_content %}{% endblock %}
+
+  <a
+    href="../documentation.html"
+    class="inline-block mt-12 text-blue-600 hover:underline font-semibold transition-colors"
+  >
+    ← Back to Documentation
+  </a>
+</div>
+{% endblock %} {% block page_elements %}
+<!-- Back to Top Button -->
+<a
+  href="#top"
+  class="fixed bottom-8 right-8 w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-800 hover:-translate-y-1 hover:shadow-xl z-[999]"
+  id="backToTop"
+  aria-label="Back to top"
+>
+  ↑
+</a>
+{% endblock %} {% block scripts %}
+<script src="../js/script.js"></script>
+{% endblock %} {% block extra_scripts %}
+<script src="../js/back-to-top.js"></script>
+{% endblock %}

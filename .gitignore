@@ -1,0 +1,13 @@
+# Build output
+/build
+
+# Dependencies
+/node_modules
+__pycache__
+*.pyc
+
+# OS files
+.DS_Store
+.env
+.venv
+.claude

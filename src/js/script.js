@@ -14,17 +14,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Navbar scroll effect
 let lastScroll = 0;
-const navbar = document.querySelector('.navbar');
+const navbar = document.querySelector('nav.sticky');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
+
     if (currentScroll > 100) {
         navbar.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
     } else {
         navbar.style.boxShadow = '0 1px 2px 0 rgb(0 0 0 / 0.05)';
     }
-    
+
     lastScroll = currentScroll;
 });
 

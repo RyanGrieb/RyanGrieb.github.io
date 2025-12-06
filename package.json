@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build:css": "npx tailwindcss -i src/css/tailwind.css -o build/css/styles.css --minify",
+    "build:css:watch": "npx tailwindcss -i src/css/tailwind.css -o build/css/styles.css --watch",
+    "build": "python build.py",
+    "dev": "python dev-server.py"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "tailwindcss": "^4.1.17"
+  }
+}
