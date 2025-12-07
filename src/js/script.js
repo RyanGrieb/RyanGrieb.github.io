@@ -46,7 +46,7 @@ const observer = new IntersectionObserver((entries) => {
 // Add fade-in effect to sections
 document.addEventListener('DOMContentLoaded', () => {
     const fadeElements = document.querySelectorAll('.timeline-item, .skill-category, .project-card, .doc-card');
-    
+
     fadeElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -61,7 +61,7 @@ const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
 
 window.addEventListener('scroll', () => {
     let current = '';
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -69,7 +69,7 @@ window.addEventListener('scroll', () => {
             current = section.getAttribute('id');
         }
     });
-    
+
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
@@ -77,3 +77,20 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+}
