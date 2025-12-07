@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ryan Grieb - IT professional specializing in automation, technical support, and infrastructure management"
+    />
+    <title>Network Troubleshooting Guide</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link
+  rel="stylesheet"
+  href="../css/styles.css"
+/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    
+  </head>
+  <body id="top" class="h-full font-sans text-slate-800 antialiased bg-white">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-slate-200">
+      <div
+        class="max-w-7xl mx-auto px-8 flex justify-between items-center py-4"
+      >
+        <div class="font-bold text-xl text-blue-600">Ryan Grieb</div>
+        <ul class="flex space-x-8 text-md font-medium">
+          <li>
+            <a
+              href="/index.html#about"
+              class="text-slate-700 hover:text-blue-600 transition-colors relative group"
+            >
+              About
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-[calc(100%-2px)] origin-left"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/index.html#experience"
+              class="text-slate-700 hover:text-blue-600 transition-colors relative group"
+            >
+              Experience
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-[calc(100%-2px)] origin-left"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/index.html#credentials"
+              class="text-slate-700 hover:text-blue-600 transition-colors relative group"
+            >
+              Credentials
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-[calc(100%-2px)] origin-left"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/all-projects.html"
+              class="text-slate-700 hover:text-blue-600 transition-colors relative group"
+            >
+              Projects
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-[calc(100%-2px)] origin-left"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/documentation.html"
+              class="text-slate-700 hover:text-blue-600 transition-colors relative group"
+            >
+              Documentation
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-[calc(100%-2px)] origin-left"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/index.html#contact"
+              class="text-slate-700 hover:text-blue-600 transition-colors relative group"
+            >
+              Contact
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-[calc(100%-2px)] origin-left"
+              ></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+<div class="max-w-4xl mx-auto px-8 py-12">
+  <a
+    href="../documentation.html"
+    class="inline-block mb-8 text-blue-600 hover:underline font-semibold transition-colors"
+  >
+    ← Back to Documentation
+  </a>
+
+  
+<h1 class="text-4xl font-bold mb-4 text-slate-900">
+  Network Troubleshooting Guide
+</h1>
+
+<div class="flex gap-8 mb-8 pb-8 border-b-2 border-slate-200 text-sm text-slate-600">
+  <div>
+    <strong class="text-slate-900">Category:</strong> Network Infrastructure
+  </div>
+  <div><strong class="text-slate-900">Last Updated:</strong> November 2025</div>
+  <div><strong class="text-slate-900">Difficulty:</strong> Intermediate</div>
+</div>
+
+<!-- Table of Contents -->
+<nav class="bg-white border border-slate-200 rounded-lg p-8 my-8">
+  <h2 class="text-2xl font-semibold mb-6 text-slate-900 pb-3 border-b-2 border-slate-200">
+    Table of Contents
+  </h2>
+  <ul class="space-y-1">
+    <li>
+      <a href="#overview" class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600">Overview</a>
+    </li>
+    <li>
+      <a href="#prerequisites" class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600">Prerequisites</a>
+    </li>
+    <li>
+      <a href="#step-1" class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600">Step 1: Initial Assessment</a>
+    </li>
+    <li>
+      <a href="#step-2" class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600">Step 2: Physical Layer Verification</a>
+    </li>
+    <li>
+      <a href="#step-3" class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600">Step 3: Basic Connectivity Tests</a>
+    </li>
+    <li>
+      <a href="#step-4" class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600">Step 4: DNS Resolution Testing</a>
+    </li>
+    <li>
+      <a href="#step-5" class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600">Step 5: DHCP Troubleshooting</a>
+    </li>
+    <li>
+      <a href="#step-6" class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600">Step 6: Wireless-Specific Issues</a>
+    </li>
+    <li>
+      <a href="#step-7" class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600">Step 7: VPN Troubleshooting</a>
+    </li>
+    <li>
+      <a href="#step-8" class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600">Step 8: Advanced Diagnostics</a>
+    </li>
+    <li>
+      <a href="#documentation" class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600">Documentation and Follow-up</a>
+    </li>
+    <li>
+      <a href="#common-issues" class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600">Common Issues Quick Reference</a>
+    </li>
+  </ul>
+</nav>
+
+<h2 id="overview" class="text-3xl font-semibold mt-10 mb-4 text-slate-900">
+  Overview
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  This guide provides a systematic approach to diagnosing and resolving
+  common network connectivity issues in enterprise environments. Whether
+  dealing with LAN, WAN, VPN, or wireless problems, following these
+  procedures will help isolate and fix issues efficiently.
+</p>
+
+<h2 id="prerequisites" class="text-3xl font-semibold mt-10 mb-4 text-slate-900">
+  Prerequisites
+</h2>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Basic understanding of TCP/IP networking</li>
+  <li>
+    Access to network diagnostic tools (ping, traceroute,
+    ipconfig/ifconfig)
+  </li>
+  <li>Administrative credentials for network devices</li>
+  <li>Physical access to relevant network equipment</li>
+</ul>
+
+<h2 id="step-1" class="text-3xl font-semibold mt-10 mb-4 text-slate-900">
+  Step 1: Initial Assessment
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  Before diving into technical troubleshooting, gather basic information
+  about the issue:
+</p>
+
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>
+    <strong class="text-slate-900">Scope:</strong> Is the problem affecting a single user,
+    multiple users, or the entire network?
+  </li>
+  <li>
+    <strong class="text-slate-900">Timing:</strong> When did the problem start? Is it
+    intermittent or constant?
+  </li>
+  <li>
+    <strong class="text-slate-900">Recent Changes:</strong> Were there any recent changes to the
+    network, hardware, or software?
+  </li>
+  <li>
+    <strong class="text-slate-900">Error Messages:</strong> Document any specific error messages
+    or symptoms
+  </li>
+</ol>
+
+<div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-6 rounded">
+  <strong class="text-blue-600">Pro Tip:</strong> Always start by checking if the problem is
+  isolated to a single device or affects multiple users. This immediately
+  helps narrow down whether it's a local or network-wide issue.
+</div>
+
+<h2 id="step-2" class="text-3xl font-semibold mt-10 mb-4 text-slate-900">
+  Step 2: Physical Layer Verification
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  Check all physical connections before moving to software diagnostics:
+</p>
+
+<h3 class="text-2xl font-semibold mt-8 mb-3 text-slate-900">
+  Cable Connections
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Verify Ethernet cables are firmly connected</li>
+  <li>Check for damaged or bent cables</li>
+  <li>Ensure cables are plugged into correct ports</li>
+  <li>Look for link lights on network adapters and switches</li>
+</ul>
+
+<h3 class="text-2xl font-semibold mt-8 mb-3 text-slate-900">
+  Hardware Status
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Confirm network adapters are enabled in Device Manager</li>
+  <li>Check router/switch status lights</li>
+  <li>Verify power to all network equipment</li>
+  <li>Test with known-good cables if available</li>
+</ul>
+
+<h2 id="step-3" class="text-3xl font-semibold mt-10 mb-4 text-slate-900">
+  Step 3: Basic Connectivity Tests
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  Use command-line tools to test basic connectivity:
+</p>
+
+<h3 class="text-2xl font-semibold mt-8 mb-3 text-slate-900">
+  Windows Commands
+</h3>
+<pre class="bg-slate-900 text-slate-100 p-6 rounded-lg overflow-x-auto my-6"><code># Check IP configuration
+ipconfig /all
+
+# Release and renew DHCP lease
+ipconfig /release
+ipconfig /renew
+
+# Flush DNS cache
+ipconfig /flushdns
+
+# Test connectivity to gateway
+ping 192.168.1.1
+
+# Test connectivity to external server
+ping 8.8.8.8
+
+# Trace route to destination
+tracert google.com</code></pre>
+
+<h3 class="text-2xl font-semibold mt-8 mb-3 text-slate-900">
+  Linux/Mac Commands
+</h3>
+<pre class="bg-slate-900 text-slate-100 p-6 rounded-lg overflow-x-auto my-6"><code># Check IP configuration
+ifconfig
+# or
+ip addr show
+
+# Test connectivity to gateway
+ping -c 4 192.168.1.1
+
+# Test connectivity to external server
+ping -c 4 8.8.8.8
+
+# Trace route to destination
+traceroute google.com</code></pre>
+
+<h2 id="step-4" class="text-3xl font-semibold mt-10 mb-4 text-slate-900">
+  Step 4: DNS Resolution Testing
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  Many connectivity issues are actually DNS problems in disguise:
+</p>
+
+<pre class="bg-slate-900 text-slate-100 p-6 rounded-lg overflow-x-auto my-6"><code># Test DNS resolution (Windows)
+nslookup google.com
+
+# Test DNS resolution (Linux/Mac)
+dig google.com
+
+# Test with alternative DNS server
+nslookup google.com 8.8.8.8</code></pre>
+
+<div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-6 rounded">
+  <strong class="text-blue-600">Common Finding:</strong> If you can ping IP addresses (like
+  8.8.8.8) but not domain names (like google.com), you have a DNS issue,
+  not a connectivity issue.
+</div>
+
+<h2 id="step-5" class="text-3xl font-semibold mt-10 mb-4 text-slate-900">
+  Step 5: DHCP Troubleshooting
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  If the device isn't getting an IP address:
+</p>
+
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>Check if the device has a valid IP address (not 169.254.x.x)</li>
+  <li>Verify DHCP service is running on the server/router</li>
+  <li>Check DHCP scope for available addresses</li>
+  <li>Ensure DHCP is not being blocked by firewall</li>
+  <li>
+    Try assigning a static IP address temporarily to isolate the issue
+  </li>
+</ol>
+
+<h2 id="step-6" class="text-3xl font-semibold mt-10 mb-4 text-slate-900">
+  Step 6: Wireless-Specific Issues
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  For wireless connectivity problems:
+</p>
+
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Verify wireless adapter is enabled</li>
+  <li>
+    Check signal strength (should be above -70 dBm for good performance)
+  </li>
+  <li>Ensure correct SSID and password</li>
+  <li>Test on 2.4GHz vs 5GHz bands</li>
+  <li>Check for interference from other devices</li>
+  <li>Verify AP is not at capacity (device limit reached)</li>
+</ul>
+
+<div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-6 rounded">
+  <strong class="text-amber-600">Security Note:</strong> Always verify you're connecting to the
+  correct wireless network. Rogue access points can have similar names to
+  legitimate networks.
+</div>
+
+<h2 id="step-7" class="text-3xl font-semibold mt-10 mb-4 text-slate-900">
+  Step 7: VPN Troubleshooting
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  For VPN connectivity issues:
+</p>
+
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Verify VPN client is up-to-date</li>
+  <li>Check user credentials and certificates</li>
+  <li>Ensure VPN server is reachable (ping or telnet to VPN port)</li>
+  <li>Verify firewall isn't blocking VPN protocols</li>
+  <li>Check split tunneling configuration</li>
+  <li>Review VPN logs for specific error messages</li>
+</ul>
+
+<h2 id="step-8" class="text-3xl font-semibold mt-10 mb-4 text-slate-900">
+  Step 8: Advanced Diagnostics
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  If basic troubleshooting doesn't resolve the issue:
+</p>
+
+<h3 class="text-2xl font-semibold mt-8 mb-3 text-slate-900">
+  Packet Analysis
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Use Wireshark to capture and analyze network traffic</li>
+  <li>Look for dropped packets, retransmissions, or errors</li>
+  <li>Verify proper TCP handshakes are completing</li>
+</ul>
+
+<h3 class="text-2xl font-semibold mt-8 mb-3 text-slate-900">
+  Port Testing
+</h3>
+<pre class="bg-slate-900 text-slate-100 p-6 rounded-lg overflow-x-auto my-6"><code># Test if specific port is open (Windows)
+Test-NetConnection -ComputerName server.com -Port 443
+
+# Test if specific port is open (Linux)
+telnet server.com 443
+# or
+nc -zv server.com 443</code></pre>
+
+<h2 id="documentation" class="text-3xl font-semibold mt-10 mb-4 text-slate-900">
+  Documentation and Follow-up
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  Once the issue is resolved:
+</p>
+
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>
+    Document the problem, steps taken, and solution in your ticketing
+    system
+  </li>
+  <li>Update network diagrams if physical changes were made</li>
+  <li>Consider if similar issues might affect other users</li>
+  <li>Schedule follow-up with user to ensure stability</li>
+</ol>
+
+<h2 id="common-issues" class="text-3xl font-semibold mt-10 mb-4 text-slate-900">
+  Common Issues Quick Reference
+</h2>
+
+<h3 class="text-2xl font-semibold mt-8 mb-3 text-slate-900">
+  No Connectivity at All
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Check physical connections and cables</li>
+  <li>Verify network adapter is enabled</li>
+  <li>Check if device has valid IP address</li>
+</ul>
+
+<h3 class="text-2xl font-semibold mt-8 mb-3 text-slate-900">
+  Intermittent Connectivity
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Check for cable damage or loose connections</li>
+  <li>Look for wireless interference</li>
+  <li>Verify network equipment isn't overheating</li>
+  <li>Check for IP address conflicts</li>
+</ul>
+
+<h3 class="text-2xl font-semibold mt-8 mb-3 text-slate-900">
+  Slow Performance
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Test bandwidth using speed test tools</li>
+  <li>Check for network congestion</li>
+  <li>Verify QoS settings if applicable</li>
+  <li>Look for malware or bandwidth-heavy applications</li>
+</ul>
+
+<div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-6 rounded">
+  <strong class="text-blue-600">Remember:</strong> Always work from the physical layer up
+  through the OSI model. Don't skip steps—many complex problems have
+  simple physical causes.
+</div>
+
+
+  <a
+    href="../documentation.html"
+    class="inline-block mt-12 text-blue-600 hover:underline font-semibold transition-colors"
+  >
+    ← Back to Documentation
+  </a>
+</div>
+</main>
+
+    
+<!-- Back to Top Button -->
+<a
+  href="#top"
+  class="fixed bottom-8 right-8 w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-800 hover:-translate-y-1 hover:shadow-xl z-[999]"
+  id="backToTop"
+  aria-label="Back to top"
+>
+  ↑
+</a>
+
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white text-center py-4">
+      <div class="max-w-7xl mx-auto px-4">
+        <p class="text-sm opacity-80">Ryan Grieb - IT Professional</p>
+      </div>
+    </footer>
+
+    
+<script src="../js/script.js"></script>
+
+    
+<script src="../js/back-to-top.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ryan Grieb - IT professional specializing in automation, technical support, and infrastructure management"
+    />
+    <title>Active Directory User
+Management Guide</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link
+  rel="stylesheet"
+  href="../css/styles.css"
+/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    
+  </head>
+  <body id="top" class="h-full font-sans text-slate-800 antialiased bg-white">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-slate-200">
+      <div
+        class="max-w-7xl mx-auto px-8 flex justify-between items-center py-4"
+      >
+        <div class="font-bold text-xl text-blue-600">Ryan Grieb</div>
+        <ul class="flex space-x-8 text-md font-medium">
+          <li>
+            <a
+              href="/index.html#about"
+              class="text-slate-700 hover:text-blue-600 transition-colors relative group"
+            >
+              About
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-[calc(100%-2px)] origin-left"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/index.html#experience"
+              class="text-slate-700 hover:text-blue-600 transition-colors relative group"
+            >
+              Experience
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-[calc(100%-2px)] origin-left"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/index.html#credentials"
+              class="text-slate-700 hover:text-blue-600 transition-colors relative group"
+            >
+              Credentials
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-[calc(100%-2px)] origin-left"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/all-projects.html"
+              class="text-slate-700 hover:text-blue-600 transition-colors relative group"
+            >
+              Projects
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-[calc(100%-2px)] origin-left"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/documentation.html"
+              class="text-slate-700 hover:text-blue-600 transition-colors relative group"
+            >
+              Documentation
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-[calc(100%-2px)] origin-left"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/index.html#contact"
+              class="text-slate-700 hover:text-blue-600 transition-colors relative group"
+            >
+              Contact
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-[calc(100%-2px)] origin-left"
+              ></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+<div class="max-w-4xl mx-auto px-8 py-12">
+  <a
+    href="../documentation.html"
+    class="inline-block mb-8 text-blue-600 hover:underline font-semibold transition-colors"
+  >
+    ← Back to Documentation
+  </a>
+
+  
+<h1 class="text-4xl font-bold mb-4 text-slate-900">
+  Active Directory User Management Guide
+</h1>
+
+<div
+  class="flex gap-8 mb-8 pb-8 border-b-2 border-slate-200 text-sm text-slate-600"
+>
+  <div>
+    <strong class="text-slate-900">Category:</strong> Identity & Access
+    Management
+  </div>
+  <div><strong class="text-slate-900">Last Updated:</strong> November 2025</div>
+  <div>
+    <strong class="text-slate-900">Difficulty:</strong> Beginner to Intermediate
+  </div>
+</div>
+
+<!--Table of Contents -->
+<nav class="bg-white border border-slate-200 rounded-lg p-8 my-8">
+  <h2
+    class="text-2xl font-semibold mb-6 text-slate-900 pb-3 border-b-2 border-slate-200"
+  >
+    Table of Contents
+  </h2>
+  <ul class="space-y-1">
+    <li>
+      <a
+        href="#overview"
+        class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600"
+        >Overview</a
+      >
+    </li>
+    <li>
+      <a
+        href="#prerequisites"
+        class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600"
+        >Prerequisites</a
+      >
+    </li>
+    <li>
+      <a
+        href="#accessing-ad"
+        class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600"
+        >Accessing Active Directory Users and Computers</a
+      >
+    </li>
+    <li>
+      <a
+        href="#understanding-ous"
+        class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600"
+        >Understanding Organizational Units (OUs)</a
+      >
+    </li>
+    <li>
+      <a
+        href="#creating-user"
+        class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600"
+        >Creating a New User Account</a
+      >
+    </li>
+    <li>
+      <a
+        href="#user-properties"
+        class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600"
+        >Configuring Additional User Properties</a
+      >
+    </li>
+    <li>
+      <a
+        href="#modifying-user"
+        class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600"
+        >Modifying Existing User Accounts</a
+      >
+    </li>
+    <li>
+      <a
+        href="#password-management"
+        class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600"
+        >Password Management</a
+      >
+    </li>
+    <li>
+      <a
+        href="#password-troubleshooting"
+        class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600"
+        >Password Troubleshooting</a
+      >
+    </li>
+    <li>
+      <a
+        href="#disabling-enabling"
+        class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600"
+        >Disabling and Enabling User Accounts</a
+      >
+    </li>
+    <li>
+      <a
+        href="#deleting-accounts"
+        class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600"
+        >Deleting User Accounts</a
+      >
+    </li>
+    <li>
+      <a
+        href="#best-practices"
+        class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600"
+        >Best Practices and Security Considerations</a
+      >
+    </li>
+    <li>
+      <a
+        href="#quick-reference"
+        class="block py-2.5 px-3 text-slate-900 hover:text-blue-600 hover:bg-slate-50 hover:pl-4 transition-all border-l-4 border-transparent hover:border-blue-600"
+        >Quick Reference: Common Tasks</a
+      >
+    </li>
+  </ul>
+</nav>
+
+<h2
+  id="overview"
+  class="text-3xl font-semibold mt-10 mb-4 text-slate-900"
+>
+  Overview
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  Active Directory (AD) is Microsoft's directory service for Windows domain
+  networks. It stores information about network resources and makes this data
+  available to users and administrators. This guide covers the fundamental tasks
+  of managing user accounts in Active Directory, including creating, modifying,
+  and troubleshooting user accounts with a focus on common password-related
+  issues.
+</p>
+
+<h2
+  id="prerequisites"
+  class="text-3xl font-semibold mt-10 mb-4 text-slate-900"
+>
+  Prerequisites
+</h2>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Domain administrator or delegated user management permissions</li>
+  <li>Access to a Windows Server with Active Directory Domain Services</li>
+  <li>
+    Remote Server Administration Tools (RSAT) installed if managing remotely
+  </li>
+  <li>
+    Understanding of your organization's OU (Organizational Unit) structure
+  </li>
+  <li>Knowledge of company naming conventions and password policies</li>
+</ul>
+
+<h2
+  id="accessing-ad"
+  class="text-3xl font-semibold mt-10 mb-4 text-slate-900"
+>
+  Accessing Active Directory Users and Computers
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  The Active Directory Users and Computers (ADUC) console is the primary
+  graphical tool for managing user accounts.
+</p>
+
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>
+    <strong class="text-slate-900">On a Domain Controller:</strong> Click Start
+    → Windows Administrative Tools → Active Directory Users and Computers
+  </li>
+  <li>
+    <strong class="text-slate-900">On a Workstation with RSAT:</strong> Click
+    Start → Search for "Active Directory Users and Computers" or run
+    <code
+      class="bg-slate-100 px-2 py-0.5 rounded text-sm font-mono text-slate-900"
+      >dsa.msc</code
+    >
+    from the Run dialog (Win + R)
+  </li>
+  <li>
+    <strong class="text-slate-900">Verify Connection:</strong> Ensure you see
+    your domain name in the left pane and can expand the tree structure
+  </li>
+</ol>
+
+<div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-6 rounded">
+  <strong class="text-blue-600">Pro Tip:</strong> Pin Active Directory Users and
+  Computers to your taskbar if you manage users frequently. You can also create
+  custom MMC consoles with your most-used snap-ins.
+</div>
+
+<h2
+  id="understanding-ous"
+  class="text-3xl font-semibold mt-10 mb-4 text-slate-900"
+>
+  Understanding Organizational Units (OUs)
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  Before creating users, familiarize yourself with your domain's OU structure:
+</p>
+
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>
+    OUs are containers that organize users, computers, and groups hierarchically
+  </li>
+  <li>
+    They typically mirror your organizational structure (departments, locations,
+    roles)
+  </li>
+  <li>Group Policies are often applied at the OU level</li>
+  <li>
+    Common OU structures include: Users → Department → Role or Location →
+    Department → Users
+  </li>
+</ul>
+
+<p class="text-slate-600 leading-relaxed mb-4">
+  Navigate through your domain tree to find the appropriate OU where the new
+  user should be created. If unsure, consult your company's AD documentation or
+  ask a senior administrator.
+</p>
+
+<h2
+  id="creating-user"
+  class="text-3xl font-semibold mt-10 mb-4 text-slate-900"
+>
+  Creating a New User Account
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  Follow these steps to create a new user account in Active Directory:
+</p>
+
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>
+    In Active Directory Users and Computers, navigate to the appropriate OU
+  </li>
+  <li>
+    Right-click the OU → Select <strong class="text-slate-900">New</strong> →
+    <strong class="text-slate-900">User</strong>
+  </li>
+  <li>
+    In the "New Object - User" dialog, fill in the following fields:
+    <ul class="pl-6 mt-2 space-y-2 list-disc">
+      <li>
+        <strong class="text-slate-900">First name:</strong> User's first name
+        (e.g., "John")
+      </li>
+      <li>
+        <strong class="text-slate-900">Initials:</strong> Middle initial
+        (optional)
+      </li>
+      <li>
+        <strong class="text-slate-900">Last name:</strong> User's last name
+        (e.g., "Smith")
+      </li>
+      <li>
+        <strong class="text-slate-900">Full name:</strong> Auto-populates,
+        verify it's correct
+      </li>
+      <li>
+        <strong class="text-slate-900">User logon name:</strong> Username for
+        logging in (e.g., "jsmith" or "john.smith")
+      </li>
+    </ul>
+  </li>
+  <li>Click <strong class="text-slate-900">Next</strong></li>
+  <li>
+    Set the initial password:
+    <ul class="pl-6 mt-2 space-y-2 list-disc">
+      <li>
+        <strong class="text-slate-900">Password:</strong> Enter a temporary
+        password that meets your domain's complexity requirements
+      </li>
+      <li>
+        <strong class="text-slate-900">Confirm password:</strong> Re-enter the
+        password
+      </li>
+      <li>
+        <strong class="text-slate-900"
+          >User must change password at next logon:</strong
+        >
+        Check this box (recommended for security)
+      </li>
+      <li>
+        <strong class="text-slate-900">User cannot change password:</strong>
+        Usually unchecked unless it's a service account
+      </li>
+      <li>
+        <strong class="text-slate-900">Password never expires:</strong> Only
+        check for service accounts, never for regular users
+      </li>
+      <li>
+        <strong class="text-slate-900">Account is disabled:</strong> Check only
+        if you're creating the account in advance
+      </li>
+    </ul>
+  </li>
+  <li>Click <strong class="text-slate-900">Next</strong></li>
+  <li>Review the summary information</li>
+  <li>Click <strong class="text-slate-900">Finish</strong></li>
+</ol>
+
+<div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-6 rounded">
+  <strong class="text-amber-600">Security Best Practice:</strong> Always check
+  "User must change password at next logon" when creating new accounts. Never
+  share passwords via email or unsecured channels. Use a secure method like a
+  phone call or password management system to communicate temporary passwords.
+</div>
+
+<h2
+  id="user-properties"
+  class="text-3xl font-semibold mt-10 mb-4 text-slate-900"
+>
+  Configuring Additional User Properties
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  After creating the user, configure additional properties by right-clicking the
+  user and selecting <strong class="text-slate-900">Properties</strong>:
+</p>
+
+<h3
+  id="general-tab"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  General Tab
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Description: Job title or role</li>
+  <li>Office: Physical location</li>
+  <li>Telephone number: Direct line</li>
+  <li>Email: Corporate email address</li>
+</ul>
+
+<h3
+  id="account-tab"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Account Tab
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>User logon name: Verify correct username</li>
+  <li>Logon hours: Restrict when user can log in (if needed)</li>
+  <li>Log On To: Restrict which computers user can access (if needed)</li>
+  <li>Account options: Additional security settings</li>
+  <li>Account expires: Set expiration date for temporary employees</li>
+</ul>
+
+<h3
+  id="profile-tab"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Profile Tab
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Profile path: Location of roaming profile (if applicable)</li>
+  <li>Logon script: Batch file to run at login (if applicable)</li>
+  <li>Home folder: User's network home directory</li>
+</ul>
+
+<h3
+  id="memberof-tab"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Member Of Tab
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Add user to security groups based on their role</li>
+  <li>Groups control access to resources and applications</li>
+  <li>
+    Click <strong class="text-slate-900">Add</strong> to search and add groups
+  </li>
+</ul>
+
+<div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-6 rounded">
+  <strong class="text-blue-600">Important:</strong> Group membership is critical
+  for access control. Verify the user is added to all necessary groups for their
+  role, such as departmental groups, application access groups, and resource
+  groups.
+</div>
+
+<h2
+  id="modifying-user"
+  class="text-3xl font-semibold mt-10 mb-4 text-slate-900"
+>
+  Modifying Existing User Accounts
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  To modify an existing user account:
+</p>
+
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>Locate the user in Active Directory Users and Computers</li>
+  <li>
+    Right-click the user → Select
+    <strong class="text-slate-900">Properties</strong>
+  </li>
+  <li>Navigate to the appropriate tab and make your changes</li>
+  <li>
+    Click <strong class="text-slate-900">Apply</strong> then
+    <strong class="text-slate-900">OK</strong>
+  </li>
+</ol>
+
+<h3
+  id="common-modifications"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Common Modifications
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>
+    <strong class="text-slate-900">Name Change:</strong> General tab → Update
+    first/last name
+  </li>
+  <li>
+    <strong class="text-slate-900">Email Change:</strong> General tab → Update
+    email field
+  </li>
+  <li>
+    <strong class="text-slate-900">Department Change:</strong> Organization tab
+    → Update department
+  </li>
+  <li>
+    <strong class="text-slate-900">Manager Change:</strong> Organization tab →
+    Select new manager
+  </li>
+  <li>
+    <strong class="text-slate-900">Group Membership:</strong> Member Of tab →
+    Add or remove groups
+  </li>
+</ul>
+
+<h2
+  id="password-management"
+  class="text-3xl font-semibold mt-10 mb-4 text-slate-900"
+>
+  Password Management
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  Password management is one of the most common administrative tasks you'll
+  perform in Active Directory.
+</p>
+
+<h3
+  id="resetting-password"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Resetting a User's Password
+</h3>
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>Locate the user account in ADUC</li>
+  <li>
+    Right-click the user → Select
+    <strong class="text-slate-900">Reset Password</strong>
+  </li>
+  <li>Enter the new temporary password (must meet complexity requirements)</li>
+  <li>Confirm the password</li>
+  <li>
+    Check
+    <strong class="text-slate-900"
+      >"User must change password at next logon"</strong
+    >
+    (highly recommended)
+  </li>
+  <li>
+    Optionally check
+    <strong class="text-slate-900">"Unlock the user's account"</strong> if the
+    account is locked
+  </li>
+  <li>Click <strong class="text-slate-900">OK</strong></li>
+  <li>Securely communicate the new password to the user</li>
+</ol>
+
+<h3
+  id="forcing-password-change"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Forcing a Password Change
+</h3>
+<p class="text-slate-600 leading-relaxed mb-4">
+  To require a user to change their password at next logon:
+</p>
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>
+    Right-click the user → <strong class="text-slate-900">Properties</strong>
+  </li>
+  <li>Go to the <strong class="text-slate-900">Account</strong> tab</li>
+  <li>
+    Check
+    <strong class="text-slate-900"
+      >"User must change password at next logon"</strong
+    >
+  </li>
+  <li>
+    Click <strong class="text-slate-900">Apply</strong> then
+    <strong class="text-slate-900">OK</strong>
+  </li>
+</ol>
+
+<h3
+  id="unlocking-account"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Unlocking a Locked Account
+</h3>
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>
+    Right-click the user → <strong class="text-slate-900">Properties</strong>
+  </li>
+  <li>Go to the <strong class="text-slate-900">Account</strong> tab</li>
+  <li>
+    Check the box <strong class="text-slate-900">"Unlock account"</strong>
+  </li>
+  <li>
+    Click <strong class="text-slate-900">Apply</strong> then
+    <strong class="text-slate-900">OK</strong>
+  </li>
+</ol>
+
+<div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-6 rounded">
+  <strong class="text-blue-600">Alternative Method:</strong> You can also unlock
+  an account while resetting the password by checking the "Unlock the user's
+  account" option in the Reset Password dialog.
+</div>
+
+<h2
+  id="password-troubleshooting"
+  class="text-3xl font-semibold mt-10 mb-4 text-slate-900"
+>
+  Password Troubleshooting
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  This section covers common password-related issues and their solutions—a
+  frequent topic in technical interviews and daily support work.
+</p>
+
+<h3
+  id="scenario-1"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Scenario 1: User Forgot Their Password
+</h3>
+<p class="text-slate-600 leading-relaxed mb-2">
+  <strong class="text-slate-900">Symptoms:</strong> User cannot log in, states
+  they forgot password
+</p>
+<p class="text-slate-600 leading-relaxed mb-2">
+  <strong class="text-slate-900">Solution:</strong>
+</p>
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>Verify the user's identity (following your company's security policy)</li>
+  <li>Reset the password using the steps in Step 6</li>
+  <li>Ensure "User must change password at next logon" is checked</li>
+  <li>Provide the temporary password securely</li>
+  <li>Have the user test logging in and changing the password</li>
+</ol>
+
+<h3
+  id="scenario-2"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Scenario 2: Account is Locked Out
+</h3>
+<p class="text-slate-600 leading-relaxed mb-2">
+  <strong class="text-slate-900">Symptoms:</strong> User receives "Account is
+  locked out" or similar error message
+</p>
+<p class="text-slate-600 leading-relaxed mb-2">
+  <strong class="text-slate-900">Solution:</strong>
+</p>
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>
+    Verify the account is indeed locked:
+    <ul class="pl-6 mt-2 space-y-2 list-disc">
+      <li>Open user properties → Account tab</li>
+      <li>
+        Look for "Unlock account" checkbox (if grayed out with no checkmark,
+        account isn't locked)
+      </li>
+    </ul>
+  </li>
+  <li>
+    Investigate the cause of lockout:
+    <ul class="pl-6 mt-2 space-y-2 list-disc">
+      <li>Multiple failed login attempts</li>
+      <li>Old saved credentials on another device</li>
+      <li>Mobile device with cached old password</li>
+      <li>Mapped drives using old credentials</li>
+      <li>Scheduled tasks running with old credentials</li>
+    </ul>
+  </li>
+  <li>Unlock the account (Account tab → Check "Unlock account")</li>
+  <li>Ask user to clear cached credentials on all devices</li>
+  <li>If lockouts persist, review Event Logs to find the source</li>
+</ol>
+
+<h3
+  id="scenario-3"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Scenario 3: Password Expired
+</h3>
+<p class="text-slate-600 leading-relaxed mb-2">
+  <strong class="text-slate-900">Symptoms:</strong> User receives "Your password
+  has expired" message
+</p>
+<p class="text-slate-600 leading-relaxed mb-2">
+  <strong class="text-slate-900">Solution:</strong>
+</p>
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>Verify password expiration in user properties → Account tab</li>
+  <li>
+    If expired, reset password or have user change it:
+    <ul class="pl-6 mt-2 space-y-2 list-disc">
+      <li>At domain computer: User can press Ctrl+Alt+Del → Change Password</li>
+      <li>Remotely: Admin resets via ADUC</li>
+    </ul>
+  </li>
+  <li>For service accounts, consider setting "Password never expires"</li>
+</ol>
+
+<h3
+  id="scenario-4"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Scenario 4: "Your Password is Incorrect" Errors
+</h3>
+<p class="text-slate-600 leading-relaxed mb-2">
+  <strong class="text-slate-900">Symptoms:</strong> User is certain they're
+  using correct password but receives incorrect password error
+</p>
+<p class="text-slate-600 leading-relaxed mb-2">
+  <strong class="text-slate-900">Troubleshooting Steps:</strong>
+</p>
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>
+    <strong class="text-slate-900">Verify Caps Lock is off:</strong> Most common
+    cause of this issue
+  </li>
+  <li>
+    <strong class="text-slate-900">Check username:</strong> Ensure user is
+    entering correct username format (DOMAIN\username or username@domain.com)
+  </li>
+  <li>
+    <strong class="text-slate-900">Test on different computer:</strong> Isolates
+    if issue is machine-specific
+  </li>
+  <li>
+    <strong class="text-slate-900">Check account status:</strong> Verify account
+    is not disabled or locked
+  </li>
+  <li>
+    <strong class="text-slate-900">Verify password requirements:</strong> Ensure
+    password meets complexity requirements if recently changed
+  </li>
+  <li>
+    <strong class="text-slate-900">Check replication:</strong> Password changes
+    may not have replicated to all domain controllers yet (wait 15 minutes)
+  </li>
+  <li>
+    <strong class="text-slate-900">Review Group Policy:</strong> Check if any
+    policies are affecting authentication
+  </li>
+  <li>
+    <strong class="text-slate-900">Last resort:</strong> Reset the password and
+    have user set a new one
+  </li>
+</ol>
+
+<h3
+  id="scenario-5"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Scenario 5: Cannot Reset Password (Insufficient Permissions)
+</h3>
+<p class="text-slate-600 leading-relaxed mb-2">
+  <strong class="text-slate-900">Symptoms:</strong> Admin receives error when
+  attempting to reset password
+</p>
+<p class="text-slate-600 leading-relaxed mb-2">
+  <strong class="text-slate-900">Solution:</strong>
+</p>
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>Verify you have necessary permissions to reset passwords in that OU</li>
+  <li>
+    Cannot reset passwords for users in higher-privileged groups (e.g., Domain
+    Admins)
+  </li>
+  <li>Contact a higher-level administrator or domain admin</li>
+  <li>
+    Check if the user object has "Deny" permissions that override your rights
+  </li>
+</ol>
+
+<div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-6 rounded">
+  <strong class="text-amber-600">Security Note:</strong> Multiple consecutive
+  lockouts may indicate a brute-force attack or compromised credentials.
+  Investigate Event Logs for failed logon attempts from suspicious IP addresses
+  or unusual times.
+</div>
+
+<h2
+  id="disabling-enabling"
+  class="text-3xl font-semibold mt-10 mb-4 text-slate-900"
+>
+  Disabling and Enabling User Accounts
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  When employees leave or take extended leave, disable (don't delete) their
+  accounts:
+</p>
+
+<h3
+  id="disabling-account"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Disabling an Account
+</h3>
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>Right-click the user account</li>
+  <li>Select <strong class="text-slate-900">Disable Account</strong></li>
+  <li>Confirm the action</li>
+  <li>A red "X" icon will appear on the user object</li>
+</ol>
+
+<h3
+  id="enabling-account"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Enabling an Account
+</h3>
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>Right-click the disabled user account</li>
+  <li>Select <strong class="text-slate-900">Enable Account</strong></li>
+  <li>The red "X" icon will disappear</li>
+  <li>You may need to reset the password if it has expired</li>
+</ol>
+
+<div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-6 rounded">
+  <strong class="text-blue-600">Best Practice:</strong> Disable accounts for
+  employees on leave or who have left the company rather than deleting them
+  immediately. This preserves the account for potential return and maintains
+  audit trails. Set a policy to delete accounts after 90 days of being disabled.
+</div>
+
+<h2
+  id="deleting-accounts"
+  class="text-3xl font-semibold mt-10 mb-4 text-slate-900"
+>
+  Deleting User Accounts
+</h2>
+<p class="text-slate-600 leading-relaxed mb-4">
+  Deleting accounts should be done carefully as it's usually not reversible from
+  the Recycle Bin unless AD Recycle Bin is enabled.
+</p>
+
+<h3
+  id="before-deleting"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Before Deleting
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Verify the account has been disabled for the required period</li>
+  <li>Ensure all data has been backed up or transferred</li>
+  <li>Document the deletion in your ticketing system</li>
+  <li>Get approval if required by company policy</li>
+</ul>
+
+<h3
+  id="deletion-process"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Deletion Process
+</h3>
+<ol class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-decimal">
+  <li>Right-click the user account</li>
+  <li>Select <strong class="text-slate-900">Delete</strong></li>
+  <li>Confirm the deletion warning</li>
+  <li>The account is moved to the Deleted Objects container</li>
+</ol>
+
+<div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-6 rounded">
+  <strong class="text-amber-600">Important:</strong> Deleting a user account is
+  permanent unless AD Recycle Bin is enabled. The Security Identifier (SID) is
+  lost forever, meaning you cannot recreate the account with the same
+  permissions. Always disable first, delete later.
+</div>
+
+<h2
+  id="best-practices"
+  class="text-3xl font-semibold mt-10 mb-4 text-slate-900"
+>
+  Best Practices and Security Considerations
+</h2>
+
+<h3
+  id="account-creation-best-practices"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Account Creation Best Practices
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Follow consistent naming conventions across the organization</li>
+  <li>Always use "User must change password at next logon" for new accounts</li>
+  <li>Never set "Password never expires" for regular user accounts</li>
+  <li>Document account creation in your ticketing system</li>
+  <li>
+    Create accounts in the appropriate OU for proper Group Policy application
+  </li>
+  <li>Assign only the minimum necessary groups and permissions</li>
+</ul>
+
+<h3
+  id="password-security"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Password Security
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Never share passwords via email, chat, or text message</li>
+  <li>Use complex temporary passwords that meet domain requirements</li>
+  <li>Communicate passwords through secure, approved channels only</li>
+  <li>Regularly audit accounts with "Password never expires" enabled</li>
+  <li>Implement Multi-Factor Authentication (MFA) where possible</li>
+</ul>
+
+<h3
+  id="account-lifecycle-management"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Account Lifecycle Management
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Disable accounts immediately when employees leave</li>
+  <li>Set account expiration dates for contractors and temporary staff</li>
+  <li>Regularly audit disabled accounts for potential deletion</li>
+  <li>Review and remove unnecessary group memberships during offboarding</li>
+  <li>Maintain documentation of all account changes</li>
+</ul>
+
+<h3
+  id="troubleshooting-tips"
+  class="text-2xl font-semibold mt-8 mb-3 text-slate-900"
+>
+  Troubleshooting Tips
+</h3>
+<ul class="mb-6 pl-8 space-y-3 text-slate-600 leading-relaxed list-disc">
+  <li>Always verify identity before resetting passwords</li>
+  <li>Check Event Logs for detailed information about lockouts and failures</li>
+  <li>Consider replication delays when password changes don't seem to work</li>
+  <li>
+    Use "Find" (binoculars icon) to quickly locate users in large directories
+  </li>
+  <li>
+    Enable "Advanced Features" (View menu) to access additional properties
+  </li>
+</ul>
+
+<h2
+  id="quick-reference"
+  class="text-3xl font-semibold mt-10 mb-4 text-slate-900"
+>
+  Quick Reference: Common Tasks
+</h2>
+
+<h3 class="text-xl font-semibold mt-6 mb-2 text-slate-900">Create User</h3>
+<p class="text-slate-600 leading-relaxed mb-4">
+  Right-click OU → New → User → Fill in details → Set temporary password → Check
+  "User must change password at next logon" → Finish
+</p>
+
+<h3 class="text-xl font-semibold mt-6 mb-2 text-slate-900">Reset Password</h3>
+<p class="text-slate-600 leading-relaxed mb-4">
+  Right-click user → Reset Password → Enter new password → Check "User must
+  change password at next logon" → OK
+</p>
+
+<h3 class="text-xl font-semibold mt-6 mb-2 text-slate-900">Unlock Account</h3>
+<p class="text-slate-600 leading-relaxed mb-4">
+  Right-click user → Properties → Account tab → Check "Unlock account" → Apply →
+  OK
+</p>
+
+<h3 class="text-xl font-semibold mt-6 mb-2 text-slate-900">Disable Account</h3>
+<p class="text-slate-600 leading-relaxed mb-4">
+  Right-click user → Disable Account → Confirm
+</p>
+
+<h3 class="text-xl font-semibold mt-6 mb-2 text-slate-900">Add to Group</h3>
+<p class="text-slate-600 leading-relaxed mb-4">
+  Right-click user → Properties → Member Of tab → Add → Search for group → OK →
+  Apply
+</p>
+
+<div class="bg-blue-50 border-l-4 border-blue-600 p-6 my-6 rounded">
+  <strong class="text-blue-600">Remember:</strong> Active Directory changes
+  usually replicate within 15 minutes across all domain controllers. If changes
+  don't appear immediately on other systems, wait a few minutes before
+  troubleshooting further.
+</div>
+
+
+  <a
+    href="../documentation.html"
+    class="inline-block mt-12 text-blue-600 hover:underline font-semibold transition-colors"
+  >
+    ← Back to Documentation
+  </a>
+</div>
+</main>
+
+    
+<!-- Back to Top Button -->
+<a
+  href="#top"
+  class="fixed bottom-8 right-8 w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-800 hover:-translate-y-1 hover:shadow-xl z-[999]"
+  id="backToTop"
+  aria-label="Back to top"
+>
+  ↑
+</a>
+
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white text-center py-4">
+      <div class="max-w-7xl mx-auto px-4">
+        <p class="text-sm opacity-80">Ryan Grieb - IT Professional</p>
+      </div>
+    </footer>
+
+    
+<script src="../js/script.js"></script>
+
+    
+<script src="../js/back-to-top.js"></script>
+
+  </body>
+</html>
