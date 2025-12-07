@@ -17,6 +17,8 @@ def clean_build():
         shutil.rmtree(BUILD)
     BUILD.mkdir()
     (BUILD / "css").mkdir(parents=True, exist_ok=True)
+    # Create .nojekyll to prevent GitHub Pages from ignoring files starting with _ or .
+    (BUILD / ".nojekyll").touch()
 
 
 def build_html():
@@ -27,28 +29,22 @@ def build_html():
     templates = ["index.html", "all-projects.html", "documentation.html"]
 
     for template_name in templates:
-        try:
-            template = env.get_template(template_name)
-            html = template.render()
-            output_path = BUILD / template_name
-            output_path.write_text(html)
-            print(f"✓ Built {output_path}")
-        except Exception as e:
-            print(f"✗ Failed to build {template_name}: {e}")
+        template = env.get_template(template_name)
+        html = template.render()
+        output_path = BUILD / template_name
+        output_path.write_text(html)
+        print(f"✓ Built {output_path}")
 
     # Documentation page templates
     doc_templates = ["active-directory.html", "network-troubleshooting.html"]
     (BUILD / "docs").mkdir(parents=True, exist_ok=True)
 
     for doc_template in doc_templates:
-        try:
-            template = env.get_template(f"docs/{doc_template}")
-            html = template.render()
-            output_path = BUILD / "docs" / doc_template
-            output_path.write_text(html)
-            print(f"✓ Built {output_path}")
-        except Exception as e:
-            print(f"✗ Failed to build docs/{doc_template}: {e}")
+        template = env.get_template(f"docs/{doc_template}")
+        html = template.render()
+        output_path = BUILD / "docs" / doc_template
+        output_path.write_text(html)
+        print(f"✓ Built {output_path}")
 
 
 def copy_static():
@@ -68,16 +64,22 @@ def copy_static():
         print(f"✓ Copied favicon.ico")
 
 
+
 def generate_css():
     """Build Tailwind CSS"""
     print("Building CSS with Tailwind...")
-    result = os.system(
-        "npx tailwindcss -i src/css/tailwind.css -o build/css/styles.css --minify"
-    )
-    if result == 0:
+    try:
+        # Use simple subprocess.run for better error handling and output capture if needed
+        # We want it to fail if the command fails
+        import subprocess
+        subprocess.run(
+            ["npx", "tailwindcss", "-i", "src/css/tailwind.css", "-o", "build/css/styles.css", "--minify"],
+            check=True
+        )
         print("✓ Generated CSS")
-    else:
+    except subprocess.CalledProcessError:
         print("✗ CSS generation failed")
+        raise  # Re-raise to fail the build
 
 
 if __name__ == "__main__":
